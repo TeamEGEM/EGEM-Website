@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     height: 100%;
     width: 100%;
@@ -24,13 +25,16 @@ body {
     -webkit-text-size-adjust: none;
     text-align: left;
 }
+
 img {
     border: none;
 }
+
     img.title {
         padding-right: 10px;
         content: '\A';
-        }
+    }
+
 p {
     margin: 20px 0px 0px 0px;
 }
@@ -54,6 +58,7 @@ header {
     text-align: right;
     z-index: 500;
 }
+
 intro {
     height: 260px;
     width: 100%;
@@ -68,7 +73,7 @@ intro {
     background-image: linear-gradient(top, #969 0%, #636 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #969), color-stop(1, #636));
     background-image: -moz-linear-gradient(center top, #969 0%, #636 100%);
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #e4ebfd;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -76,6 +81,7 @@ intro {
     color: #fff;
     z-index: 100;
 }
+
 social {
     display: none;
     height: auto;
@@ -89,6 +95,7 @@ social {
     text-align: right;
     z-index: 300;
 }
+
 content {
     height: auto;
     width: 100%;
@@ -101,6 +108,7 @@ content {
     -webkit-box-sizing: border-box;
     text-align: left;
 }
+
 section {
     height: auto;
     width: auto;
@@ -113,22 +121,25 @@ section {
     font-weight: bold;
     text-align: center;
 }
+
     section::before {
         content: " ";
         display: block;
         height: 80px;
         margin: -80px 0 0;
-        visibility: hidden; 
+        visibility: hidden;
     }
+
 arrow {
     height: auto;
     width: auto;
     position: absolute;
-    bottom: 5px;
+    top: 2px;
     right: 10px;
     font-size: 1.2em;
     cursor: pointer;
 }
+
 section-content {
     display: block;
     height: auto;
@@ -138,6 +149,7 @@ section-content {
     padding: 0px;
     text-align: left;
 }
+
 footer {
     height: auto;
     width: 100%;
@@ -150,6 +162,7 @@ footer {
     background-image: linear-gradient(top, #303 0%, #636 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #303), color-stop(1, #636));
     background-image: -moz-linear-gradient(center top, #303 0%, #636 100%);
+    border-top: 1px solid #e4ebfd;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -162,33 +175,43 @@ footer {
 .clickable {
     cursor: pointer;
 }
+
 .bold {
     font-weight: bold;
 }
+
 .underline {
     text-decoration: underline;
 }
+
 .italic {
     font-style: italic;
 }
+
 .shadow {
     text-shadow: 0px 2px 2px #000;
 }
+
 .alignleft {
     text-align: left;
 }
+
 .aligncenter {
     text-align: center;
 }
+
 .alignright {
     text-align: right;
 }
+
 .alignjustified {
     text-align: justify;
 }
+
 .framepic {
     border: 1px solid #000;
 }
+
 .upsize {
     font-size: 1.2em;
 }

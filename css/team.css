@@ -24,10 +24,12 @@ img.team-member-image {
     border-radius: 50%;
     content: '\A';
 }
+
 .team-member-name {
     font-size: 1.1em;
     font-weight: bold;
 }
+
 .team-member-content {
     padding-top: 10px;
 }

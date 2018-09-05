@@ -1,63 +1,83 @@
 /* Responsive Design */
 hamburger-menu {
     display: none;
-    height: 40px;
-    width: 40px;
-    margin: 5px 0px;
+    position: fixed;
+    top: 7px;
+    height: 35px;
+    width: 35px;
+    margin: 0px;
+    padding: 0px;
     border: 1px solid #e4ebfd;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 }
+
 hamburger-line {
     display: none;
     height: 3px;
-    width: 26px;
-    margin: 7px 6px;
+    width: 22px;
+    margin: 6px 6px;
     background-color: #e4ebfd;
+    border-radius: 1px;
     content: "";
 }
-.menu {
-    position: absolute;
-    top: 7px;
-    left: 10px;
-    padding: 5px;
-    background-color: #036;
-    border: solid 1px #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.container {
-  display: flex;
-}
-.main {
-    width: 60%;
-    margin-right: 20px;
-}
-.sidebar {
-  width: 40%;
+
+ul.menu {
+    float: right;
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 50px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    background: #303;
+    background: -moz-linear-gradient(90deg, #636 0%, #303 50%);
+    background: -webkit-linear-gradient(90deg, #363 0%, #303 50%);
+    background: linear-gradient(90deg, #636 0%, #303 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#663366",endColorstr="#330033",GradientType=1);
+    border-top: 1px solid #e4ebfd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: right;
 }
 
-/*@media(max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
-    .main {
-        width: 100%;
-    }
-    .sidebar {
-        width: 100%;
-    }
-}*/
+li.menu-item {
+    display: block;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    padding: 12px 20px;
+    margin: 0px;
+    background: #636;
+    background: -moz-linear-gradient(90deg, #969 50%, #636 100%);
+    background: -webkit-linear-gradient(90deg, #969 50%, #636 100%);
+    background: linear-gradient(90deg, #959 50%, #636 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#996699",endColorstr="#663366",GradientType=1);
+    border-bottom: solid 1px #e4ebfd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    list-style-type: none;
+}
+
+/* Media Queries */
 @media (max-width: 960px) /*and (-webkit-min-device-pixel-ratio: 2)*/ {
     hamburger-menu {
         display: block;
     }
+
     hamburger-line {
         display: block;
     }
+
     particles-wrapper {
         display: none;
     }
+
     .nav {
         display: none;
     }

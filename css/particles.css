@@ -1,5 +1,6 @@
 /* Wrapper for particles.js */
 particles-wrapper {
+    display: block;
     position: absolute;
     top: 0px;
     width: 100%;

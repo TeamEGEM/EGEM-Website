@@ -3,7 +3,7 @@ history.go(1)
 // Scroll to top of page
 $(document).ready(function () {
     $('.scrollTop').click(function () {
-        $('html, body').animate({scrollTop: 0}, 0);
+        $('html, body').animate({ scrollTop: 0 }, 0);
         return false;
     });
 });
@@ -15,16 +15,25 @@ $(document).ready(function () {
 });
 
 // Fade out coin info on scroll
+//$(document).ready(function () {
+//    $('.coin-info').delay(1000).fadeIn(1000);
+//    $(window).scroll(function(){
+//        $(".coin-info").css("opacity", 1 - $(window).scrollTop() / ($('.coin-info').height() / 1));
+//    });
+//});
+
+// Show mobile nav when clicking on hamburger and hide when a link is selected
 $(document).ready(function () {
-    $('.coin-info').delay(1000).fadeIn(1000);
-    $(window).scroll(function(){
-        $(".coin-info").css("opacity", 1 - $(window).scrollTop() / ($('.coin-info').height() / 1));
+    $('hamburger-menu').add('.mobile-nav').click(function () {
+        $('.menu').slideToggle(500);
+    });
+    $('hamburger-menu').add('.mobile-nav').on('tap', function () {
+        $('.menu').slideToggle(500);
     });
 });
 
 // Open new window
-function popup(url)
-{
+function popup(url) {
     var width = 950;
     var height = 450;
     var left = (screen.width - width) / 2;
@@ -39,8 +48,7 @@ function popup(url)
     params += ', status=yes';
     params += ', toolbar=yes';
     newwin = window.open(url, 'windowname5', params);
-    if (window.focus)
-    {
+    if (window.focus) {
         newwin.focus()
     }
     return false;
@@ -56,38 +64,30 @@ function popup(url)
 //}
 
 // iDevice handling function
-function iDeviceHandler()
-{
-    if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)))
-    {
+function iDeviceHandler() {
+    if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
         document.getElementById('iDeviceMusic').style.display = "block";
         return true;
     }
-    else
-    {
+    else {
         document.getElementById('FlashMusic').style.display = "block";
     }
 }
 
 // Div display functions
-function hideContent(divId)
-{
+function hideContent(divId) {
     document.getElementById(divId).style.display = "none";
 }
 
-function showContent(divId)
-{
+function showContent(divId) {
     document.getElementById(divId).style.display = "block";
 }
 
-function toggleDisplay(divId)
-{
-    if (document.getElementById(divId).style.display == "none")
-    {
+function toggleDisplay(divId) {
+    if (document.getElementById(divId).style.display == "none") {
         document.getElementById(divId).style.display = "block";
     }
-    else
-    {
+    else {
         document.getElementById(divId).style.display = "none";
     }
 }
@@ -158,23 +158,23 @@ function getBrowserName(element) {
     if (navigator.userAgent.search("MSIE") >= 0) {
         browserName = "IE";
     }
-        // Check for Chrome
+    // Check for Chrome
     else if (navigator.userAgent.search("Chrome") >= 0) {
         browserName = "Chrome";
     }
-        // Check for Firefox
+    // Check for Firefox
     else if (navigator.userAgent.search("Firefox") >= 0) {
         browserName = "Firefox";
     }
-        // Check for Safari
+    // Check for Safari
     else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
         browserName = "Safari";
     }
-        // Check for Opera
+    // Check for Opera
     else if (navigator.userAgent.search("Opera") >= 0) {
         browserName = "Opera";
     }
-        // Browser is Other
+    // Browser is Other
     else {
         browserName = "Other";
     }
@@ -182,13 +182,11 @@ function getBrowserName(element) {
 }
 
 // Returns the current time to the specified element in 24 hour format
-function getTime(element)
-{
+function getTime(element) {
     var currentTime = new Date();
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
-    if (minutes < 10)
-    {
+    if (minutes < 10) {
         minutes = ("0" + minutes);
     }
     currentTime = (hours + ":" + minutes);
@@ -196,18 +194,15 @@ function getTime(element)
 }
 
 // Returns the current date to the specified element
-function getDate(element)
-{
+function getDate(element) {
     var currentDate = new Date();
     var month = (currentDate.getMonth() + 1);
     var day = currentDate.getDate();
     var year = currentDate.getFullYear();
-    if (month < 10)
-    {
+    if (month < 10) {
         month = ("0" + month);
     }
-    if (day < 10)
-    {
+    if (day < 10) {
         day = ("0" + day)
     }
     currentDate = (month + "/" + day + "/" + year);
@@ -215,15 +210,13 @@ function getDate(element)
 }
 
 // Adds 0 in front of single digits in time and date strings
-function pad(str, max)
-{
+function pad(str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
 }
 
 // Formats the time into hh:mm
-function formatTime(timeStr)
-{
+function formatTime(timeStr) {
     var parts = timeStr.split(":");
     parts[0] = pad(parts[0], 2);
     parts[1] = pad(parts[1], 2);
@@ -232,8 +225,7 @@ function formatTime(timeStr)
 }
 
 // Formats the date into mm/dd/yyyy
-function formatDate(dateStr)
-{
+function formatDate(dateStr) {
     var parts = dateStr.split("/");
     parts[0] = pad(parts[0], 2);
     parts[1] = pad(parts[1], 2);

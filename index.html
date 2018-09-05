@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/links.css" />
     <link rel="stylesheet" type="text/css" href="css/particles.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/roadmap.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/team.css" />
     <link rel="stylesheet" type="text/css" href="css/ticker.css" />
@@ -25,6 +26,7 @@
 <body>
     <a name="#top" />
     <header>
+        <!-- Navigation for Desktop View -->
         <a href="index.html"><img src="images/small-egem-logo.png" style="position: absolute; top: 0px; left: 15px;" alt="EtherGem Home" /></a>
         <a href="#about" class="nav">About</a>
         <a href="#roadmap" class="nav">Roadmap</a>
@@ -35,29 +37,40 @@
         <a href="http://explorer.egem.io" target="_blank" class="nav">Block Explorer</a>
         <a href="http://network.egem.io" target="_blank" class="nav">Network Stats</a>
         <!-- Navigation for Responsive Mobile View -->
-        <hamburger-menu style="position: absolute; right:20px;">
+        <hamburger-menu style="position: absolute; right: 20px;">
             <hamburger-line></hamburger-line>
             <hamburger-line></hamburger-line>
             <hamburger-line></hamburger-line>
         </hamburger-menu>
+        <ul class="menu">
+            <li class="menu-item"><a href="#about" class="mobile-nav">About</a></li>
+            <li class="menu-item"><a href="#roadmap" class="mobile-nav">Roadmap</a></li>
+            <li class="menu-item"><a href="#nodes" class="mobile-nav">Master Nodes</a></li>
+            <li class="menu-item"><a href="#exchanges" class="mobile-nav">Exchanges</a></li>
+            <!--<li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>-->
+            <li class="menu-item"><a href="http://myegemwallet.com" target="_blank" class="mobile-nav">Wallet</a></li>
+            <li class="menu-item"><a href="http://explorer.egem.io" target="_blank" class="mobile-nav">Block Explorer</a></li>
+            <li class="menu-item"><a href="http://network.egem.io" target="_blank" class="mobile-nav">Network Stats</a></li>
+        </ul>
     </header>
     <!-- Coin Stats Ticker -->
+    <script type="text/javascript">getCoinInfo();</script>
     <ticker-wrapper>
         <ticker>
             <ticker-item>
-                <span class="stat-title">Current Era:</span> (0)
+                <span class="stat-title">Current Era</span> 0
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Block Height:</span> 811245<span class="block-height" />
+                <span class="stat-title">Block Height</span> <span class="block-height"></span>
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Est. EGEM Supply:</span> 9,000,087<span class="total-egem-supply" />
+                <span class="stat-title">Est. EGEM Supply</span> <span class="total-egem-supply"></span>
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Market Cap (USD):</span> $244,836<span class="market-cap-usd" />
+                <span class="stat-title">Market Cap (USD)</span> <span class="market-cap-usd"></span>
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Average Exchange Price (USD):</span> $0.02563453<span class="average-usd" />
+                <span class="stat-title">Average Exchange Price (USD)</span> <span class="average-usd"></span>
             </ticker-item>
         </ticker>
     </ticker-wrapper>
@@ -116,7 +129,89 @@
             </arrow>
         </section>
         <section-content class="aligncenter">
-            <img src="images/roadmap.png" style="height: auto; width: 100%" />
+            <div id="wrapper">
+                <div class="content">
+                    <div class="container">
+                        <div class="demo1">
+                            <h2 class="h1"> Roadmap </h2>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="main-timeline">
+                                        <div class="timeline">
+                                            <a href="#wrapper" class="timeline-content">
+                                                <div class="timeline-icon">
+                                                    <i class="fa fa-chain"></i>
+                                                </div>
+                                                <div class="inner-content">
+                                                    <h3 class="title">Intergrated sidechain</h3>
+                                                    <p class="description">
+                                                        Sidechain short info   about this lenght how clown lol xd 1337 xd xd cx xxx cxc cxcdffv.
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="timeline">
+                                            <a href="#wrapper" class="timeline-content">
+                                                <div class="timeline-icon">
+                                                    <i class="fa fa-rocket"></i>
+                                                </div>
+                                                <div class="inner-content">
+                                                    <h3 class="title">Quarry nodes</h3>
+                                                    <p class="description">
+                                                        Quarry nodes short info   about this lenght how clown lol xd 1337 xd xd cx xxx cxc.
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="timeline">
+                                            <a href="#wrapper" class="timeline-content">
+                                                <div class="timeline-icon">
+                                                    <i class="fa fa-globe"></i>
+                                                </div>
+                                                <div class="inner-content">
+                                                    <h3 class="title">Explorer</h3>
+                                                    <p class="description">
+                                                        Explorer info   about this lenght how clown lol xd 1337 xd xd cx xxx cxc cxcdffv.
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="timeline">
+                                            <a href="#wrapper" class="timeline-content">
+                                                <div class="timeline-icon">
+                                                    <i class="fa fa-rocket"></i>
+                                                </div>
+                                                <div class="inner-content">
+                                                    <h3 class="title">Wallets</h3>
+                                                    <p class="description">
+                                                        Wallet Info  about this lenght how clown lol xd 1337 xd xd cx xxx cxc cxcdffv.
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<a href="#wrapper" class="timeline-content">
+                <div class="timeline-icon">
+                    <i class="fa fa-chain"></i>
+                </div>
+                <div class="inner-content">
+                    <h3 class="title">Era 0</h3>
+                    <p class="description">
+                        - Genesis Block<br />
+                        - Implement Online Wallet<br />
+                        - Create Block Explorer<br />
+                        - Create Network Status Page<br />
+                        - Bring Quarry Node System Online<br />
+                        - Implement Sidechain<br />
+                    </p>
+                </div>
+            </a>-->
         </section-content>
         <section id="nodes">
             Master Nodes
