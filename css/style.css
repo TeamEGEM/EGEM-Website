@@ -74,7 +74,6 @@ footer {
     bottom: 0px;
     margin: 0px;
     padding-top: 8px;
-    border-top: 1px solid #333;
     background-color: #636;
     background-image: linear-gradient(top, #303 0%, #636 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #303), color-stop(1, #636));

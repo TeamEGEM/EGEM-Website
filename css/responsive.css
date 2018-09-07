@@ -33,19 +33,18 @@ ul.menu {
     float: right;
     display: none;
     position: fixed;
-    height: 80%;
+    height: calc(100% - 80px);
     width: 100%;
     top: 50px;
     left: 0px;
     margin: 0px;
     padding: 0px;
-    background: #303;
-    background: -moz-linear-gradient(90deg, #636 0%, #303 50%);
-    background: -webkit-linear-gradient(90deg, #363 0%, #303 50%);
-    background: linear-gradient(90deg, #636 0%, #303 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#663366",endColorstr="#330033",GradientType=1);
-    border-top: 1px solid #e4ebfd;
-    border-bottom: 1px solid #e4ebfd;
+    background: #333;
+    background: -moz-linear-gradient(90deg, #303 0%, #636 100%);
+    background: -webkit-linear-gradient(90deg, #636 0%, #636 100%);
+    background: linear-gradient(90deg, #303 0%, #636 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#330033",endColorstr="#663366",GradientType=1);
+    /*border-bottom: 1px solid #e4ebfd;*/
     text-align: right;
 }
 
@@ -57,32 +56,33 @@ li.menu-item {
     padding: 12px 20px;
     margin: 0px;
     background: #636;
-    background: -moz-linear-gradient(90deg, #969 50%, #636 100%);
-    background: -webkit-linear-gradient(90deg, #969 50%, #636 100%);
-    background: linear-gradient(90deg, #959 50%, #636 100%);
+    background: -moz-linear-gradient(90deg, #969 0%, #636 100%);
+    background: -webkit-linear-gradient(90deg, #969 0%, #636 100%);
+    background: linear-gradient(90deg, #959 0%, #636 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#996699",endColorstr="#663366",GradientType=1);
     border-bottom: solid 1px #e4ebfd;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     list-style-type: none;
 }
 
-/* Media Queries */
-@media (max-width: 960px) /*and (-webkit-min-device-pixel-ratio: 2)*/ {
-    hamburger-menu {
-        display: block;
+    li.menu-item:first-of-type {
+        border-top: 1px solid #e4ebfd;
     }
 
-    hamburger-line {
-        display: block;
-    }
+    /* Media Queries */
+    @media (max-width: 960px) /*and (-webkit-min-device-pixel-ratio: 2)*/ {
+        hamburger-menu {
+            display: block;
+        }
 
-    particles-wrapper {
-        display: none;
-    }
+        hamburger-line {
+            display: block;
+        }
 
-    .nav {
-        display: none;
+        particles-wrapper {
+            display: none;
+        }
+
+        .nav {
+            display: none;
+        }
     }
-}
