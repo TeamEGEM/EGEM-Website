@@ -9,12 +9,12 @@ function getCoinInfo() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var parsedResponse = JSON.parse(this.responseText);
-            alert(parsedResponse('BLOCK_HEIGHT'));
-            document.getElementsByClassName('block-height').innerHTML = parsedResponse('BLOCK_HEIGHT');
-            document.getElementsByClassName('total-egem-supply').innerHTML = parsedResponse('TOTAL_EGEM_SUPPLY');
-            document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse('MARKET_CAP_USD');
-            document.getElementsByClassName('average-usd').innerHTML = parsedResponse('AVERAGEUSD');
+            var resp = JSON.parse(this.responseText);
+            alert(resp.BLOCK_HEIGHT);
+            document.getElementsByClassName('block-height').innerHTML = resp.BLOCK_HEIGHT;
+            document.getElementsByClassName('total-egem-supply').innerHTML = resp.TOTAL_EGEM_SUPPLY;
+            document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse.MARKET_CAP_USD;
+            document.getElementsByClassName('average-usd').innerHTML = parsedResponse.AVERAGEUSD;
             /*parsedResponse(arr);*/
         }
     };
