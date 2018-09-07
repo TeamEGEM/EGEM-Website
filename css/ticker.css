@@ -65,15 +65,18 @@ ticker {
 }
 
 ticker-item {
+    height: 100%;
     display: inline-block;
     padding: 8px 50px 0px 50px;
     font-size: 1.0em;
-    color: #e4ebfd;
+    background-color: #e4ebfd;
+    color: #666;
 }
 
 .stat-title {
-    color: #000;
-    background-color: #e4ebfd;
+    height: 100%;
+    color: #333;
+    /*background-color: #e4ebfd;*/
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 3px;
