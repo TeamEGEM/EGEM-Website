@@ -7,10 +7,15 @@ function getCoinInfo() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var coinResponse = JSON.parse(this.responseText);
-            document.getElementById('block-height').innerHTML = (coinResponse.BLOCK_HEIGHT).toFixed();
-            document.getElementById('total-egem-supply').innerHTML = (coinResponse.TOTAL_EGEM_SUPPLY).toFixed();
-            document.getElementById('market-cap-usd').innerHTML = (coinResponse.MARKET_CAP_USD).toFixed(2);
-            document.getElementById('average-usd').innerHTML = (coinResponse.AVERAGEUSD).toFixed(4);
+            var blockHeight = coinResponse.BLOCK_HEIGHT.toFixed();
+            var totalSupply = coinResponse.TOTAL_EGEM_SUPPLY.toFixed();
+            var marketCap = coinResponse.MARKET_CAP_USD.toFixed(2);
+            var averageUSD = coinResponse.AVERAGEUSD.toFixed(4);
+
+            document.getElementById('block-height').innerHTML = blockHeight;
+            document.getElementById('total-egem-supply').innerHTML = totalSupply;
+            document.getElementById('market-cap-usd').innerHTML = marketCap;
+            document.getElementById('average-usd').innerHTML = averageUSD;
         }
     };
     xhr.open("GET", url, true);
