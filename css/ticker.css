@@ -36,10 +36,10 @@ ticker-wrapper {
     width: 100%;
     overflow: hidden;
     height: 30px;
-    background-color: #333;
-    background-image: linear-gradient(top, #333 0%, #000 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333), color-stop(1, #000));
-    background-image: -moz-linear-gradient(center top, #333 0%, #000 100%);
+    background-color: #222;
+    background-image: linear-gradient(top, #333 0%, #111 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333), color-stop(1, #111));
+    background-image: -moz-linear-gradient(center top, #333 0%, #111 100%);
     padding-left: 100%;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -68,7 +68,7 @@ ticker-item {
     display: inline-block;
     padding: 8px 10px 8px 10px;
     margin-right: 100px;
-    background-color: #333;
+    background-color: #444;
     font-size: 1.0em;
     color: #e4ebfd;
     border-radius: 5px;
