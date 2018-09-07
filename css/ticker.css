@@ -37,6 +37,10 @@ ticker-wrapper {
     overflow: hidden;
     height: 30px;
     background-color: #000;
+    background: -moz-linear-gradient(180deg, #333 0%, #000 100%);
+    background: -webkit-linear-gradient(180deg, #333 0%, #000 100%);
+    background: linear-gradient(180deg, #333 0%, #000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#333333",endColorstr="#000000",GradientType=1);
     padding-left: 100%;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -65,13 +69,11 @@ ticker-item {
     display: inline-block;
     padding: 8px 10px 8px 10px;
     margin-right: 100px;
-    background-color: #333;
     font-size: 1.0em;
     color: #e4ebfd;
-    border-radius: 5px;
 }
 
 .stat-title {
     color: #fff;
-    padding-right: 5px;
+    padding-right: 10px;
 }
