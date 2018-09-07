@@ -9,24 +9,28 @@ function getCoinInfo() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var arr = JSON.parse(this.responseText);
-            parsedResponse(arr);
+            var parsedResponse = JSON.parse(this.responseText);
+            document.getElementsByClassName('block-height').innerHTML = parsedResponse('BLOCK_HEIGHT');
+            document.getElementsByClassName('total-egem-supply').innerHTML = parsedResponse('TOTAL_EGEM_SUPPLY');
+            document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse('MARKET_CAP_USD');
+            document.getElementsByClassName('average-usd').innerHTML = parsedResponse('AVERAGEUSD');
+            /*parsedResponse(arr);*/
         }
     };
     xhr.open("GET", url, true);
     xhr.send();
 
-    function parsedResponse(arr) {
-        var out = "1";
+    /*function parsedResponse(arr) {
+        var out = "";
         var i;
         for (i = 0; i < arr.length; i++) {
             out += 'arr[i]' + arr[i].display;
         }
-        document.getElementsByClassName('block-height').innerHTML = out;
-        document.getElementsByClassName('total-egem-supply').innerHTML = out;
-        document.getElementsByClassName('market-cap-usd').innerHTML = out;
-        document.getElementsByClassName('average-usd').innerHTML = out;
-    };
+        document.getElementsByClassName('block-height').innerHTML = parsedResponse('BLOCK_HEIGHT');
+        document.getElementsByClassName('total-egem-supply').innerHTML = parsedResponse('TOTAL_EGEM_SUPPLY');
+        document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse('MARKET_CAP_USD');
+        document.getElementsByClassName('average-usd').innerHTML = parsedResponse('AVERAGEUSD');
+    };*/
 
     try {
         // Compliant browsers
