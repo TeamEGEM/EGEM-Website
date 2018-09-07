@@ -6,11 +6,11 @@ function getCoinInfo() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var resp = JSON.parse(this.responseText);
-            document.getElementById('block-height').innerHTML = resp.BLOCK_HEIGHT;
-            document.getElementById('total-egem-supply').innerHTML = resp.TOTAL_EGEM_SUPPLY;
-            document.getElementById('market-cap-usd').innerHTML = parsedResponse.MARKET_CAP_USD;
-            document.getElementById('average-usd').innerHTML = parsedResponse.AVERAGEUSD;
+            var coinResponse = JSON.parse(this.responseText);
+            document.getElementById('block-height').innerHTML = coinResponse.BLOCK_HEIGHT;
+            document.getElementById('total-egem-supply').innerHTML = coinResponse.TOTAL_EGEM_SUPPLY;
+            document.getElementById('market-cap-usd').innerHTML = coinResponse.MARKET_CAP_USD;
+            document.getElementById('average-usd').innerHTML = coinResponse.AVERAGEUSD;
         }
     };
     xhr.open("GET", url, true);
