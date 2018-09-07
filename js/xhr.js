@@ -7,10 +7,10 @@ function getCoinInfo() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var coinResponse = JSON.parse(this.responseText);
-            var blockHeight = coinResponse.BLOCK_HEIGHT.toFixed();
-            var totalSupply = coinResponse.TOTAL_EGEM_SUPPLY.toFixed();
-            var marketCap = coinResponse.MARKET_CAP_USD.toFixed(2);
-            var averageUSD = coinResponse.AVERAGEUSD.toFixed(4);
+            var blockHeight = parseFloat(coinResponse.BLOCK_HEIGHT).toFixed();
+            var totalSupply = parseFloat(coinResponse.TOTAL_EGEM_SUPPLY).toFixed();
+            var marketCap = parseFloat(coinResponse.MARKET_CAP_USD).toFixed(2);
+            var averageUSD = parseFloat(coinResponse.AVERAGEUSD).toFixed(4);
 
             document.getElementById('block-height').innerHTML = blockHeight;
             document.getElementById('total-egem-supply').innerHTML = totalSupply;
