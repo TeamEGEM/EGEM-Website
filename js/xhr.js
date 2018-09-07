@@ -3,7 +3,7 @@
 // ***********************************
 
 function getCoinInfo() {
-    var Request = require("request");
+/*    var Request = require("request");
 
     Request.get("https://api.egem.io/api/v1/egem_prices", (error, response, body) => {
         if (error) {
@@ -11,9 +11,9 @@ function getCoinInfo() {
         }
         console.dir(JSON.parse(body));
     });
-};
+};*/
 
- /*   var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     var url = 'https://api.egem.io/api/v1/egem_prices';
 
     xhr.onreadystatechange = function () {
@@ -51,15 +51,3 @@ function getCoinInfo() {
         };
     };
 };
-
-/*
-var request = require('request');
-request('https://api.egem.io/api/v1/nodes', function (error, response, body) {
-    console.log('error:', error); // Print the error if one occurred
-    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-
-    for (const users of JSON.parse(body)['node_data']) {
-        console.log(users.data);
-    }
-});
-*/
