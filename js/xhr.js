@@ -1,6 +1,4 @@
-// ***********************************
 // Call REST API to retrieve coin info
-// ***********************************
 
 function getCoinInfo() {
 
@@ -10,28 +8,14 @@ function getCoinInfo() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var resp = JSON.parse(this.responseText);
-            alert(resp.BLOCK_HEIGHT);
-            document.getElementsByClassName('block-height').innerHTML = resp.BLOCK_HEIGHT;
-            document.getElementsByClassName('total-egem-supply').innerHTML = resp.TOTAL_EGEM_SUPPLY;
-            document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse.MARKET_CAP_USD;
-            document.getElementsByClassName('average-usd').innerHTML = parsedResponse.AVERAGEUSD;
-            /*parsedResponse(arr);*/
+            document.getElementById('block-height').innerHTML = resp.BLOCK_HEIGHT;
+            document.getElementById('total-egem-supply').innerHTML = resp.TOTAL_EGEM_SUPPLY;
+            document.getElementById('market-cap-usd').innerHTML = parsedResponse.MARKET_CAP_USD;
+            document.getElementById('average-usd').innerHTML = parsedResponse.AVERAGEUSD;
         }
     };
     xhr.open("GET", url, true);
     xhr.send();
-
-    /*function parsedResponse(arr) {
-        var out = "";
-        var i;
-        for (i = 0; i < arr.length; i++) {
-            out += 'arr[i]' + arr[i].display;
-        }
-        document.getElementsByClassName('block-height').innerHTML = parsedResponse('BLOCK_HEIGHT');
-        document.getElementsByClassName('total-egem-supply').innerHTML = parsedResponse('TOTAL_EGEM_SUPPLY');
-        document.getElementsByClassName('market-cap-usd').innerHTML = parsedResponse('MARKET_CAP_USD');
-        document.getElementsByClassName('average-usd').innerHTML = parsedResponse('AVERAGEUSD');
-    };*/
 
     try {
         // Compliant browsers
@@ -44,7 +28,7 @@ function getCoinInfo() {
         }
         catch (e) {
             // AJAX is not supported
-            console.log("AJAX is not supported. Please upgrade your browser!");
+            alert('AJAX is not supported. Please upgrade your browser!');
         };
     };
 };
