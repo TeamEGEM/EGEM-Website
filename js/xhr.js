@@ -3,15 +3,6 @@
 // ***********************************
 
 function getCoinInfo() {
-/*    var Request = require("request");
-
-    Request.get("https://api.egem.io/api/v1/egem_prices", (error, response, body) => {
-        if (error) {
-            return console.dir(error);
-        }
-        console.dir(JSON.parse(body));
-    });
-};*/
 
     var xhr = new XMLHttpRequest();
     var url = 'https://api.egem.io/api/v1/egem_prices';
@@ -26,7 +17,7 @@ function getCoinInfo() {
     xhr.send();
 
     function parsedResponse(arr) {
-        var out = "";
+        var out = "1";
         var i;
         for (i = 0; i < arr.length; i++) {
             out += 'arr[i]' + arr[i].display;
@@ -36,6 +27,7 @@ function getCoinInfo() {
         document.getElementsByClassName('market-cap-usd').innerHTML = out;
         document.getElementsByClassName('average-usd').innerHTML = out;
     };
+
     try {
         // Compliant browsers
         xhr = new XMLHttpRequest();
