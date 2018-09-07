@@ -70,10 +70,12 @@ ticker-item {
     padding: 8px 10px 8px 10px;
     margin-right: 100px;
     font-size: 1.0em;
+    background-color: #333;
     color: #e4ebfd;
+    border-radius: 10px;
 }
 
 .stat-title {
-    color: #fff;
+    color: #8987df;
     padding-right: 10px;
 }
