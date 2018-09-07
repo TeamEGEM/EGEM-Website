@@ -1,7 +1,6 @@
 // Call REST API to retrieve coin info
 
 function getCoinInfo() {
-
     var xhr = new XMLHttpRequest();
     var url = 'https://api.egem.io/api/v1/egem_prices';
 
@@ -21,6 +20,7 @@ function getCoinInfo() {
         // Compliant browsers
         xhr = new XMLHttpRequest();
     }
+
     catch (e) {
         try {
             // IE7+
