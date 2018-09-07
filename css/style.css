@@ -52,6 +52,7 @@ header {
     background-image: linear-gradient(top, #636 0%, #303 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #636), color-stop(1, #303));
     background-image: -moz-linear-gradient(center top, #636 0%, #303 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#663366",endColorstr="#330033",GradientType=1);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -73,6 +74,7 @@ intro {
     background-image: linear-gradient(top, #969 0%, #636 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #969), color-stop(1, #636));
     background-image: -moz-linear-gradient(center top, #969 0%, #636 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#996699",endColorstr="#663366",GradientType=1);
     border-bottom: 1px solid #e4ebfd;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -162,6 +164,7 @@ footer {
     background-image: linear-gradient(top, #303 0%, #636 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #303), color-stop(1, #636));
     background-image: -moz-linear-gradient(center top, #303 0%, #636 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#663366",endColorstr="#330033",GradientType=1);
     border-top: 1px solid #e4ebfd;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
