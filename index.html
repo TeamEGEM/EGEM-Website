@@ -1,137 +1,275 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    <head>
-        <meta http-equiv="pragma" content="no-cache" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="utf-8" />
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="author" content="EGEM Project" />
-        <meta name="keywords" content="EtherGem EGEM Ethereum Bitcoin Litecoin Dash Ripple Sapphire master quarry nodes cryptocurrency cryptocurrencies coin token blockchain" />
-        <meta name="description" content="EtherGem (EGEM) is a community-supported coin with no pre-mine. It is based off of Ethereum, but does not have many of the limitations
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="EGEM Project" />
+    <meta name="keywords" content="EtherGem EGEM Ethereum Bitcoin Litecoin Dash Ripple Sapphire master quarry nodes cryptocurrency cryptocurrencies coin token blockchain" />
+    <meta name="description" content="EtherGem (EGEM) is a community-supported coin with no pre-mine. It is based off of Ethereum, but does not have many of the limitations
         of Ethereum, such as limited transactional throughput. It also offers quarry nodes that pay dividends to node holders." />
-        <title>EtherGem (EGEM) - Home</title>
-        <link rel="stylesheet" type="text/css" href="css/links.css" />
-        <link rel="stylesheet" type="text/css" href="css/particles.css" />
-        <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-        <link rel="stylesheet" type="text/css" href="css/roadmap.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" type="text/css" href="css/team.css" />
-        <link rel="stylesheet" type="text/css" href="css/ticker.css" />
-        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="js/functions.js"></script>
-        <script type="text/javascript" src="js/particles.min.js"></script>
-        <script type="text/javascript" src="js/xhr.js"></script>
-        <script type="text/javascript" src="js/particles-config.js" defer="defer"></script>
-    </head>
-    <body>
-        <nav>
-            <!-- Navigation for Desktop View -->
-            <a href="index.html"><img src="images/small-egem-logo.png" style="position: absolute; top: 0px; left: 15px;" alt="EtherGem Home" /></a>
-            <a href="#about" class="nav">About</a>
-            <a href="#roadmap" class="nav">Roadmap</a>
-            <a href="#nodes" class="nav">Master Nodes</a>
-            <a href="#exchanges" class="nav">Exchanges</a>
-            <!--<a href="#team" class="nav">Team</a>-->
-            <a href="https://myegemwallet.com" target="_blank" class="nav">Wallet</a>
-            <a href="https://explorer.egem.io" target="_blank" class="nav">Block Explorer</a>
-            <a href="https://network.egem.io" target="_blank" class="nav">Network Stats</a>
-            <!-- Navigation for Responsive Mobile View -->
-            <hamburger-menu style="position: absolute; right: 20px;">
-                <hamburger-line></hamburger-line>
-                <hamburger-line></hamburger-line>
-                <hamburger-line></hamburger-line>
-            </hamburger-menu>
-            <ul class="menu">
-                <li class="menu-item"><a href="#about" class="mobile-nav">About</a></li>
-                <li class="menu-item"><a href="#roadmap" class="mobile-nav">Roadmap</a></li>
-                <li class="menu-item"><a href="#nodes" class="mobile-nav">Master Nodes</a></li>
-                <li class="menu-item"><a href="#exchanges" class="mobile-nav">Exchanges</a></li>
-                <!--<li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>-->
-                <li class="menu-item"><a href="http://myegemwallet.com" target="_blank" class="mobile-nav">Wallet</a></li>
-                <li class="menu-item"><a href="http://explorer.egem.io" target="_blank" class="mobile-nav">Block Explorer</a></li>
-                <li class="menu-item"><a href="http://network.egem.io" target="_blank" class="mobile-nav">Network Stats</a></li>
-            </ul>
-        </nav>
-        <!-- Coin Stats Ticker -->
-        <script type="text/javascript">getCoinInfo();</script>
-        <ticker-wrapper>
-            <ticker>
-                <ticker-item>
-                    <span class="stat-title">Current Era:</span>0
-                </ticker-item>
-                <ticker-item>
-                    <span class="stat-title">Block Height:</span><span id="block-height"></span>
-                </ticker-item>
-                <ticker-item>
-                    <span class="stat-title">Est. EGEM Supply:</span><span id="total-egem-supply"></span>
-                </ticker-item>
-                <ticker-item>
-                    <span class="stat-title">Market Cap (USD):</span>$<span id="market-cap-usd"></span>
-                </ticker-item>
-                <ticker-item>
-                    <span class="stat-title">Average Exchange Price (USD):</span>$<span id="average-usd"></span>
-                </ticker-item>
-            </ticker>
-        </ticker-wrapper>
-        <content>
-            <a name="#top"></a>
-            <intro>
-                <!-- Social Media Links -->
-                <social class="social-media">
-                    <a href="http://discord.egem.io" alt="Discord" target="_blank"><img src="images/social-icons/discord-32.png" alt="Discord" class="social-anim" /></a>
-                    <!--<img src="images/social-icons/facebook-32.png"  alt="Facebook" class="social-anim" />-->
-                    <a href="https://t.me/EGEM_Team" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="social-anim" /></a>
-                    <a href="https://twitter.com/EtherGemCoin" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="social-anim" /></a>
-                    <a href="https://www.youtube.com/channel/UCH4uEyf5roU6ydButXYdiBg" alt="YouTube" target="_blank"><img src="images/social-icons/youtube-32.png" alt="YouTube" class="social-anim" /></a>
-                </social>
-                <!-- Blockchain Animation - Disappears in Responsive Mobile View-->
-                <particles-wrapper>
-                    <div id="particles-js"></div>
-                </particles-wrapper>
-                <img src="images/logo.png" style="display: none; margin-top: 20px;" class="egem-logo" alt="EtherGem Logo" />
-            </intro>
-            <!-- Main Section - Topics are Comprised of <section> and <section-content> Tags -->
-            <section>
-                <a class="section-anchor" name="about"></a>
-                About EGEM
-                <arrow class="scrollTop">
-                    &#9650;
-                </arrow>
-            </section>
-            <section-content>
-                <p>
-                    EGEM is the stable, pure, no pre-mine coin with applied technologies peernet and per block endowment.
-                </p>
-                <p>
-                    What does that really mean, though?
-                </p>
-                <p>
-                    EtherGem, "EGEM," is first and foremost, a pure community coin with no pre-mine. True to its roots as a cryptocurrency, the Proof of Work mining
-                    community will always be a part of EGEM's future and is the foundation of the EGEM launch. There is no ICO on EGEM and EGEM is its own primary
-                    blockchain, not just a token or concept on another chain. The EtherGem blockchain is an Ethereum network, meaning it starts with the tested and proven
-                    Ethereum (as in ETH) core technologies and builds from there. Technically, EGEM is an Ethereum chain as described in the yellow paper, with EIP150,
-                    EIP155, EIP158 applied from block 0. Block Rewards have 7 eras of reduction, including a dev reward enabled after block 5000. Developers and Community
-                    Managers are bound by a continuity agreement to maintain the network, community, and coin. There is no cap to EGEM at the moment. A monetary cap will be
-                    put in place when the community determines that the logical progression would be to cap the coin.
-                </p>
-                <p>
-                    An "applied technologies peernet" is where the EtherGem blockchain grows on a mineable token sidechain. Dual mining ethergem and a token is something
-                    new. The EGEM sidechain is designed to be very much an integral part of ongoing mainchain development, where peers can implement new technology
-                    while continuing to rely on a solid foundation. The sidechain and token will be available shortly after the mainnet release.
-                </p>
-                <p>
-                    View the EtherGem <a href="whitepaper.html" target="_blank">white paper</a>.
-                </p>
-            </section-content>
-            <section>
-                <a class="section-anchor" name="roadmap"></a>
-                Project Roadmap
-                <arrow class="scrollTop">
-                    &#9650;
-                </arrow>
-            </section>
-            <section-content class="aligncenter">
-                <div id="wrapper">
+    <title>EtherGem (EGEM) - Home</title>
+    <link rel="stylesheet" type="text/css" href="css/links.css" />
+    <link rel="stylesheet" type="text/css" href="css/particles.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/roadmap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/team.css" />
+    <link rel="stylesheet" type="text/css" href="css/ticker.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/particles.min.js"></script>
+    <script type="text/javascript" src="js/xhr.js"></script>
+    <script type="text/javascript" src="js/particles-config.js" defer="defer"></script>
+</head>
+<body>
+    <nav>
+        <!-- Navigation for Desktop View -->
+        <a href="index.html"><img src="images/small-egem-logo.png" style="position: absolute; top: 0px; left: 15px;" alt="EtherGem Home" /></a>
+        <a href="#about" class="nav">About</a>
+        <a href="#roadmap" class="nav">Roadmap</a>
+        <a href="#nodes" class="nav">Master Nodes</a>
+        <a href="#exchanges" class="nav">Exchanges</a>
+        <!--<a href="#team" class="nav">Team</a>-->
+        <a href="https://myegemwallet.com" target="_blank" class="nav">Wallet</a>
+        <a href="https://explorer.egem.io" target="_blank" class="nav">Block Explorer</a>
+        <a href="https://network.egem.io" target="_blank" class="nav">Network Stats</a>
+        <!-- Navigation for Responsive Mobile View -->
+        <hamburger-menu style="position: absolute; right: 20px;">
+            <hamburger-line></hamburger-line>
+            <hamburger-line></hamburger-line>
+            <hamburger-line></hamburger-line>
+        </hamburger-menu>
+        <ul class="menu">
+            <li class="menu-item"><a href="#about" class="mobile-nav">About</a></li>
+            <li class="menu-item"><a href="#roadmap" class="mobile-nav">Roadmap</a></li>
+            <li class="menu-item"><a href="#nodes" class="mobile-nav">Master Nodes</a></li>
+            <li class="menu-item"><a href="#exchanges" class="mobile-nav">Exchanges</a></li>
+            <!--<li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>-->
+            <li class="menu-item"><a href="http://myegemwallet.com" target="_blank" class="mobile-nav">Wallet</a></li>
+            <li class="menu-item"><a href="http://explorer.egem.io" target="_blank" class="mobile-nav">Block Explorer</a></li>
+            <li class="menu-item"><a href="http://network.egem.io" target="_blank" class="mobile-nav">Network Stats</a></li>
+        </ul>
+    </nav>
+    <!-- Coin Stats Ticker -->
+    <script type="text/javascript">getCoinInfo();</script>
+    <ticker-wrapper>
+        <ticker>
+            <ticker-item>
+                <span class="stat-title">Current Era:</span>0
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Block Height:</span><span id="block-height"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Est. EGEM Supply:</span><span id="total-egem-supply"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Market Cap (USD):</span>$<span id="market-cap-usd"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Average Exchange Price (USD):</span>$<span id="average-usd"></span>
+            </ticker-item>
+        </ticker>
+    </ticker-wrapper>
+    <content>
+        <a name="#top"></a>
+        <intro>
+            <!-- Social Media Links -->
+            <social class="social-media">
+                <a href="http://discord.egem.io" alt="Discord" target="_blank"><img src="images/social-icons/discord-32.png" alt="Discord" class="social-anim" /></a>
+                <!--<img src="images/social-icons/facebook-32.png"  alt="Facebook" class="social-anim" />-->
+                <a href="https://t.me/EGEM_Team" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="social-anim" /></a>
+                <a href="https://twitter.com/EtherGemCoin" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="social-anim" /></a>
+                <a href="https://www.youtube.com/channel/UCH4uEyf5roU6ydButXYdiBg" alt="YouTube" target="_blank"><img src="images/social-icons/youtube-32.png" alt="YouTube" class="social-anim" /></a>
+            </social>
+            <!-- Blockchain Animation - Disappears in Responsive Mobile View-->
+            <particles-wrapper>
+                <div id="particles-js"></div>
+            </particles-wrapper>
+            <img src="images/logo.png" style="display: none; margin-top: 20px;" class="egem-logo" alt="EtherGem Logo" />
+        </intro>
+        <!-- Main Section - Topics are Comprised of <section> and <section-content> Tags -->
+        <section>
+            <a class="section-anchor" name="about"></a>
+            About EGEM
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content>
+            <p>
+                EGEM is the stable, pure, no pre-mine coin with applied technologies peernet and per block endowment.
+            </p>
+            <p>
+                What does that really mean, though?
+            </p>
+            <p>
+                EtherGem, "EGEM," is first and foremost, a pure community coin with no pre-mine. True to its roots as a cryptocurrency, the Proof of Work mining
+                community will always be a part of EGEM's future and is the foundation of the EGEM launch. There is no ICO on EGEM and EGEM is its own primary
+                blockchain, not just a token or concept on another chain. The EtherGem blockchain is an Ethereum network, meaning it starts with the tested and proven
+                Ethereum (as in ETH) core technologies and builds from there. Technically, EGEM is an Ethereum chain as described in the yellow paper, with EIP150,
+                EIP155, EIP158 applied from block 0. Block Rewards have 7 eras of reduction, including a dev reward enabled after block 5000. Developers and Community
+                Managers are bound by a continuity agreement to maintain the network, community, and coin. There is no cap to EGEM at the moment. A monetary cap will be
+                put in place when the community determines that the logical progression would be to cap the coin.
+            </p>
+            <p>
+                An "applied technologies peernet" is where the EtherGem blockchain grows on a mineable token sidechain. Dual mining ethergem and a token is something
+                new. The EGEM sidechain is designed to be very much an integral part of ongoing mainchain development, where peers can implement new technology
+                while continuing to rely on a solid foundation. The sidechain and token will be available shortly after the mainnet release.
+            </p>
+            <p>
+                View the EtherGem <a href="whitepaper.html" target="_blank">white paper</a>.
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="roadmap"></a>
+            Project Roadmap
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content class="aligncenter">
+            <div class="timeline">
+                <div class="container left">
+                    <div class="card">
+                        <h2>Genesis Block</h2>
+                        <p>
+                            Stable EGEM blockchain with 13 second average block time, web wallets, and basic explorer (Initial Launch)
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card">
+                        <h2>Desktop wallet Opal alpha release</h2>
+                        <p>
+                            A wallet we can grow with to add the upcoming integrated subchain and work on all platforms
+                        </p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="card">
+                        <h2>Quarry Nodes</h2>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card">
+                        <h2>Explorer and Wallet Enhancements</h2>
+                        <p>
+                            Upgraded Explorer, Mobile Wallets and Opal Wallet Beta release
+                        </p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="card">
+                        <h2>Sapphire</h2>
+                        <p>
+                            Integrated sub-chain with DEX testnet open
+                        </p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card">
+                        <h2>Product integration and growth</h2>
+                        <p>
+                            Desktop wallet Opal Alpha release - a wallet we can grow with to add the upcoming integrated subchain and work on all platforms
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="nodes"></a>
+            Master Nodes
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content>
+            <p>
+                Interested in earning a return on your EGEM holdings? EGEM quarry nodes allow node operators to receive EtherGem in exchange for running a node. There are
+                currently two tiers of nodes:
+                <ul>
+                    <li />Tier 1 - 10000 EGEM Collateral
+                    <li />Tier 2 - Tier 1 Node &amp; 30000 EGEM Collateral
+                </ul>
+                As the EtherGem network grows, there are plans to add additional node tiers with increasing returns. This gives node investors the ability to exponentially grow
+                their holdings as they acquire more EGEM. Click <a href="https://github.com/TeamEGEM/EGEM-node-install" alt="Node Setup Instructions">here</a> to access the
+                GitHub code for setting up a node.
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="exchanges"></a>
+            Exchanges
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content style="margin-bottom: 60px;">
+            <p>
+                We are proudly listed on the following exchanges. The EtherGem team is actively engaged in talks with additional exchanges, and they will be listed here as they
+                become available for trading.
+            </p>
+            <div class="aligncenter">
+                <a href="https://www.graviex.net/" target="_blank" alt="Graviex"><img src="images/exchanges/graviex.png" style="vertical-align: top; margin: 20px 10px 0px 10px;" alt="Graviex" /></a>
+                <a href="https://www.maplechange.com/" target="_blank" alt="Graviex"><img src="images/exchanges/maplechange.png" style="vertical-align: top; margin: 20px 10px 70px 10px;" alt="MapleChange" /></a>
+            </div>
+        </section-content>-->
+    </content>
+    <footer>
+        &copy;2018 EtherGem, All Rights Reserved.
+    </footer>
+</body>
+</html>
+
+<!--
+            <a href="#wrapper" class="timeline-content">
+                <div class="timeline-icon">
+                    <i class="fa fa-chain"></i>
+                </div>
+                <div class="inner-content">
+                    <h3 class="title">Era 0</h3>
+                    <p class="description">
+                        - Genesis Block<br />
+                        - Implement Online Wallet<br />
+                        - Create Block Explorer<br />
+                        - Create Network Status Page<br />
+                        - Bring Quarry Node System Online<br />
+                        - Implement Sidechain<br />
+                    </p>
+                </div>
+            </a>
+
+
+        <h2 id="team">
+            Team
+        </h2>
+        <arrow class="scrollTop">&#9650;</arrow>
+        <div style="width: 80%; position: relative; left: 10%; text-align: center;">
+            <team-member>
+                Team Member 1
+            </team-member>
+            <team-member>
+                Team Member 2
+            </team-member>
+            <team-member>
+                <img src="images/team-members/eric_martin.jpg" class="team-member-image" />
+                <div class="team-member-name">
+                    Eric Martin
+                </div>
+                <div class="team-member-content">
+                    Mr. Martin holds a B.S. in Information Systems from Drexel University and has over 20 years of experience in all aspects of information technology;
+                    infrastructure, architecture, development, and testing.  His primary interest is applying software quality assurance principles to blockchain
+                    technology and development.
+                </div>
+            </team-member>
+        </div>
+
+    <div id="wrapper">
                     <div class="content">
                         <div class="container">
                             <div class="demo1">
@@ -198,91 +336,4 @@
                         </div>
                     </div>
                 </div>
-            </section-content>
-            <section>
-                <a class="section-anchor" name="nodes"></a>
-                Master Nodes
-                <arrow class="scrollTop">
-                    &#9650;
-                </arrow>
-            </section>
-            <section-content>
-                <p>
-                    Interested in earning a return on your EGEM holdings? EGEM quarry nodes allow node operators to receive EtherGem in exchange for running a node. There are
-                    currently two tiers of nodes:
-                    <ul>
-                        <li />Tier 1 - 10000 EGEM Collateral
-                        <li />Tier 2 - Tier 1 Node &amp; 30000 EGEM Collateral
-                    </ul>
-                    As the EtherGem network grows, there are plans to add additional node tiers with increasing returns. This gives node investors the ability to exponentially grow
-                    their holdings as they acquire more EGEM. Click <a href="https://github.com/TeamEGEM/EGEM-node-install" alt="Node Setup Instructions">here</a> to access the
-                    GitHub code for setting up a node.
-                </p>
-            </section-content>
-            <section>
-                <a class="section-anchor" name="exchanges"></a>
-                Exchanges
-                <arrow class="scrollTop">
-                    &#9650;
-                </arrow>
-            </section>
-            <section-content style="margin-bottom: 60px;">
-                <p>
-                    We are proudly listed on the following exchanges. The EtherGem team is actively engaged in talks with additional exchanges, and they will be listed here as they
-                    become available for trading.
-                </p>
-                <div class="aligncenter">
-                    <a href="https://www.graviex.net/" target="_blank" alt="Graviex"><img src="images/exchanges/graviex.png" style="vertical-align: top; margin: 20px 10px 0px 10px;" alt="Graviex" /></a>
-                    <a href="https://www.maplechange.com/" target="_blank" alt="Graviex"><img src="images/exchanges/maplechange.png" style="vertical-align: top; margin: 20px 10px 70px 10px;" alt="MapleChange" /></a>
-                </div>
-            </section-content>-->
-        </content>
-        <footer>
-            &copy;2018 EtherGem, All Rights Reserved.
-        </footer>
-    </body>
-</html>
-
-<!--
-            <a href="#wrapper" class="timeline-content">
-                <div class="timeline-icon">
-                    <i class="fa fa-chain"></i>
-                </div>
-                <div class="inner-content">
-                    <h3 class="title">Era 0</h3>
-                    <p class="description">
-                        - Genesis Block<br />
-                        - Implement Online Wallet<br />
-                        - Create Block Explorer<br />
-                        - Create Network Status Page<br />
-                        - Bring Quarry Node System Online<br />
-                        - Implement Sidechain<br />
-                    </p>
-                </div>
-            </a>
-
-
-        <h2 id="team">
-            Team
-        </h2>
-        <arrow class="scrollTop">&#9650;</arrow>
-        <div style="width: 80%; position: relative; left: 10%; text-align: center;">
-            <team-member>
-                Team Member 1
-            </team-member>
-            <team-member>
-                Team Member 2
-            </team-member>
-            <team-member>
-                <img src="images/team-members/eric_martin.jpg" class="team-member-image" />
-                <div class="team-member-name">
-                    Eric Martin
-                </div>
-                <div class="team-member-content">
-                    Mr. Martin holds a B.S. in Information Systems from Drexel University and has over 20 years of experience in all aspects of information technology;
-                    infrastructure, architecture, development, and testing.  His primary interest is applying software quality assurance principles to blockchain
-                    technology and development.
-                </div>
-            </team-member>
-        </div>
 -->
