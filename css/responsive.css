@@ -44,8 +44,11 @@ ul.nav-menu {
     background: -webkit-linear-gradient(90deg, #636 0%, #636 100%);
     background: linear-gradient(90deg, #303 0%, #636 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#330033",endColorstr="#663366",GradientType=1);
-    /*border-bottom: 1px solid #e4ebfd;*/
     text-align: right;
+}
+
+.nav-menu.is-open ul {
+    display: block;
 }
 
 li.menu-item {

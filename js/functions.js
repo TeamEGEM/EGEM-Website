@@ -19,7 +19,7 @@ $(document).ready(function () {
     /*$('hamburger-menu').add('.mobile-nav').click(function () {
         $('.menu').slideToggle(500);
     });*/
-    $('hamburger-menu').add('.mobile-nav').on('click', function () {
+    $('hamburger-menu').add('.mobile-nav').on('tap', function () {
         $('.nav-menu').slideToggle(500);
     });
 });
