@@ -16,9 +16,9 @@ $(document).ready(function () {
 
 // Show mobile nav when clicking on hamburger and hide when a link is selected
 $(document).ready(function () {
-    /*$('hamburger-menu').add('.mobile-nav').click(function () {
-        $('.menu').slideToggle(500);
-    });*/
+    $('hamburger-menu').add('.mobile-nav').on('click', function () {
+        $('.nav-menu').slideToggle(500);
+    });
     $('hamburger-menu').add('.mobile-nav').on('tap', function () {
         $('.nav-menu').slideToggle(500);
     });
