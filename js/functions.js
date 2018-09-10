@@ -20,10 +20,10 @@ $(document).ready(function () {
         $('.menu').slideToggle(500);
     });*/
     $('hamburger-menu').add('.mobile-nav').on('tap', function () {
-        $('.menu').slideToggle(500);
+        $('.nav-menu').slideToggle(500);
     });
     $('hamburger-menu').add('.mobile-nav').on('click', function () {
-        $('.menu').slideToggle(500);
+        $('.nav-menu').slideToggle(500);
     });
 });
 

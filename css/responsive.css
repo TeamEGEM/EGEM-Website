@@ -29,7 +29,7 @@ hamburger-line {
     content: "";
 }
 
-ul.menu {
+ul.nav-menu {
     float: right;
     display: none;
     position: fixed;
