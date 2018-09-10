@@ -105,12 +105,37 @@ p {
 .card {
     padding: 20px 30px;
     background-color: #e4ebfd;
+    background: -moz-linear-gradient(270deg, #e4ebfd 0%, #c2c9db 100%);
+    background: -webkit-linear-gradient(270deg, #e4ebfd 0%, #c2c9db 100%);
+    background: linear-gradient(270deg, #e4ebfd 0%, #c2c9db 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4ebfd",endColorstr="#c2c9db",GradientType=1);
     position: relative;
     border-radius: 10px;
     border: 4px solid #636;
 }
+
 .container:nth-of-type(even) .card {
     background-color: #e4ebfd;
+    background: -moz-linear-gradient(90deg, #e4ebfd 0%, #c2c9db 100%);
+    background: -webkit-linear-gradient(90deg, #e4ebfd 0%, #c2c9db 100%);
+    background: linear-gradient(90deg, #e4ebfd 0%, #c2c9db 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4ebfd",endColorstr="#c2c9db",GradientType=1);
+}
+
+/* Show accomplished milestones in greyscale */
+.grey-complete {
+    background: #ccc;
+    background: -moz-linear-gradient(270deg, #ccc 0%, #aaa 100%);
+    background: -webkit-linear-gradient(270deg, #ccc 0%, #aaa 100%);
+    background: linear-gradient(270deg, #ccc 0%, #aaa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc",endColorstr="#aaaaaa",GradientType=1);
+}
+.container:nth-of-type(even) .grey-complete {
+    background: #ccc;
+    background: -moz-linear-gradient(90deg, #ccc 0%, #aaa 100%);
+    background: -webkit-linear-gradient(90deg, #ccc 0%, #aaa 100%);
+    background: linear-gradient(90deg, #ccc 0%, #aaa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc",endColorstr="#aaaaaa",GradientType=1);
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
