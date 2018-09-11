@@ -25,14 +25,14 @@ p {
     .timeline::after {
         content: ' ';
         position: absolute;
-        width: 8px;
+        width: 7px;
         background-color: white;
         top: 0;
         bottom: 0;
         left: 50%;
         margin-left: -4px;
         background-color: #636;
-        border-radius: 4px;
+        border-radius: 3px;
     }
 
 /* Container around content */
@@ -47,10 +47,10 @@ p {
     .container::after {
         content: ' ';
         position: absolute;
-        width: 20px;
-        height: 20px;
-        right: -14px;
-        background: url('../images/egem-icon.png') no-repeat;
+        width: 25px;
+        height: 25px;
+        right: -16px;
+        background: url('../images/tiny-egem.png') 5px 0px no-repeat;
         background-color: #969;
         border: 4px solid #636;
         top: 40px;
@@ -73,7 +73,7 @@ p {
     content: ' ';
     height: 0;
     position: absolute;
-    top: 45px;
+    top: 47px;
     width: 0;
     z-index: 1;
     right: 30px;
@@ -87,7 +87,7 @@ p {
     content: ' ';
     height: 0;
     position: absolute;
-    top: 45px;
+    top: 47px;
     width: 0;
     z-index: 1;
     left: 30px;
@@ -98,7 +98,7 @@ p {
 
 /* Fix the circle for containers on the right side */
 .right::after {
-    left: -14px;
+    left: -17px;
 }
 
 /* The actual content */
@@ -110,7 +110,7 @@ p {
     background: linear-gradient(270deg, #e4ebfd 0%, #c2c9db 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4ebfd",endColorstr="#c2c9db",GradientType=1);
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 4px solid #636;
 }
 
@@ -179,7 +179,7 @@ p {
 
     /* Make sure all circles are at the same spot */
     .left::after, .right::after {
-        left: 17px;
+        left: 14px;
     }
 
     /* Make all right containers behave like the left ones */
