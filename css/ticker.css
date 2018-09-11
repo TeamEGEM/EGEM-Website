@@ -72,7 +72,7 @@ ticker-item {
     font-size: 1.0em;
     background-color: #333;
     color: #FBFCFC;
-    border: 2px solid #D0F7FF;
+    border: 1px dotted #D0F7FF;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
