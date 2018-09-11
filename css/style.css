@@ -13,6 +13,15 @@
 img {
     border: none;
 }
+    img.screenshot {
+        width: 100%;
+        max-width: 590px;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px 0px #333;
+        -moz-box-shadow: 5px 5px 10px 0px #333;
+        -webkit-box-shadow: 5px 5px 10px 0px #333;
+    }
 
 p {
     margin: 20px 0px 0px 0px;

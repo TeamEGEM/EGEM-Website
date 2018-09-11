@@ -110,7 +110,7 @@ p {
     background: linear-gradient(270deg, #e4ebfd 0%, #c2c9db 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4ebfd",endColorstr="#c2c9db",GradientType=1);
     position: relative;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 4px solid #636;
 }
 
