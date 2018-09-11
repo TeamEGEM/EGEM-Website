@@ -35,7 +35,7 @@ ticker-wrapper {
     top: 50px;
     width: 100%;
     overflow: hidden;
-    height: 30px;
+    height: 34px;
     background-color: #000;
     background: -moz-linear-gradient(180deg, #333 0%, #000 100%);
     background: -webkit-linear-gradient(180deg, #333 0%, #000 100%);
@@ -71,11 +71,13 @@ ticker-item {
     margin-right: 100px;
     font-size: 1.0em;
     background-color: #333;
-    color: #e4ebfd;
-    border-radius: 10px;
+    color: #FBFCFC;
+    border: 2px solid #D0F7FF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .stat-title {
-    color: #c9c/*8987df*/;
+    color: #8269D8/*8987df*/;
     padding-right: 10px;
 }

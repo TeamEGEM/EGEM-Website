@@ -63,6 +63,7 @@ nav {
     background: linear-gradient(to bottom, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
     text-align: right;
+    border-bottom: 1px solid #8987DF;
     z-index: 500;
 }
 
@@ -78,12 +79,13 @@ content {
 }
 
 footer {
-    height: 30px;
+    height: 45px;
     width: 100%;
     position: fixed;
     bottom: 0px;
     margin: 0px;
     padding-top: 8px;
+    border-top: 1px solid black;
     background: #ccdafc; /* Old browsers */
     background: -moz-linear-gradient(top, #ccdafc 5%, #ccdafc 5%, #8987df 37%, #8269d8 98%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, #ccdafc 5%,#ccdafc 5%,#8987df 37%,#8269d8 98%); /* Chrome10-25,Safari5.1-6 */
@@ -93,6 +95,13 @@ footer {
     color: #e4ebfd;
     font-size: 0.9em;
     z-index: 500;
+}
+
+footer a{
+  color: #D0F7FF;
+}
+footer a:hover{
+  color: #FBFCFC;
 }
 
 intro {
