@@ -77,7 +77,7 @@ p {
     width: 0;
     z-index: 1;
     right: 30px;
-    border: 1px solid #636;
+    border: 1px solid #87DFB5;
     border-width: 10px 0px 10px 10px;
     border-color: transparent transparent transparent #87DFB5;
 }
@@ -91,7 +91,7 @@ p {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: 1px solid #636;
+    border: 1px solid #87DFB5;
     border-width: 10px 10px 10px 0px;
     border-color: transparent #87DFB5 transparent transparent;
 }
@@ -159,9 +159,9 @@ p {
         /* Make sure that all arrows are pointing leftwards and gradients go same direction */
         .container::before {
             left: 60px;
-            border: 1px solid #636;
+            border: 1px solid #87DFB5;
             border-width: 10px 10px 10px 0;
-            border-color: transparent #636 transparent transparent;
+            border-color: transparent #87DFB5 transparent transparent;
         }
 
         .card {
