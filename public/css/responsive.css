@@ -1,0 +1,91 @@
+/* Responsive Design */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 7px;
+    height: 35px;
+    width: 35px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #e4ebfd;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+hamburger-line {
+    display: none;
+    height: 3px;
+    width: 22px;
+    margin: 6px 6px;
+    background-color: #e4ebfd;
+    border-radius: 1px;
+    content: "";
+}
+
+ul.nav-menu {
+    float: right;
+    display: none;
+    position: fixed;
+    height: calc(100% - 80px);
+    width: 100%;
+    top: 50px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    background: #ccdafc; /* Old browsers */
+    background: -moz-linear-gradient(top, #ccdafc 5%, #ccdafc 5%, #8987df 37%, #8269d8 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ccdafc 5%,#ccdafc 5%,#8987df 37%,#8269d8 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ccdafc 5%,#ccdafc 5%,#8987df 37%,#8269d8 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdafc', endColorstr='#8269d8',GradientType=0 ); /* IE6-9 */
+    text-align: right;
+}
+
+.nav-menu.is-open ul {
+    display: block;
+}
+
+li.menu-item {
+    display: block;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    padding: 12px 20px;
+    margin: 0px;
+    background: #ccdafc; /* Old browsers */
+    background: -moz-linear-gradient(top, #ccdafc 5%, #ccdafc 5%, #8987df 37%, #8269d8 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ccdafc 5%,#ccdafc 5%,#8987df 37%,#8269d8 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ccdafc 5%,#ccdafc 5%,#8987df 37%,#8269d8 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdafc', endColorstr='#8269d8',GradientType=0 ); /* IE6-9 */
+    border-bottom: solid 1px #e4ebfd;
+    list-style-type: none;
+}
+
+    li.menu-item:first-of-type {
+        border-top: 1px solid #e4ebfd;
+    }
+
+    /* Media Queries */
+    @media (max-width: 960px) /*and (-webkit-min-device-pixel-ratio: 2)*/ {
+        hamburger-menu {
+            display: block;
+        }
+
+        hamburger-line {
+            display: block;
+        }
+
+        particles-wrapper {
+            display: none;
+        }
+
+        .nav {
+            display: none;
+        }
+    }

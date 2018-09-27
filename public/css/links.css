@@ -1,0 +1,67 @@
+/* Link Formatting */
+a {
+    color: #8269d8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    a:hover {
+        color: #8987df;
+        text-decoration: none;
+    }
+
+    /* Header Links*/
+    a.nav {
+        position: relative;
+        top: 12px;
+        margin: 7px;
+        color: #e4ebfd;
+        font-size: 1.0em;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+    }
+
+        a.nav:hover {
+            color: #fff;
+            transition: all 0.5s ease;
+            text-shadow: 0px 0px 10px #fff;
+        }
+
+        a.nav:not(:hover) {
+            transition: all 0.5s ease;
+        }
+
+    a.mobile-nav {
+        position: relative;
+        color: #e4ebfd;
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+    }
+
+/* Social Media Link Image Animation */
+img.social-anim:hover {
+    transition: all 0.5s ease;
+    transform: translateX(-10px);
+}
+
+img.social-anim:not(:hover) {
+    transition: all 0.5s ease;
+}
+
+/* TEAM Social Media Link Image Animation */
+img.team-social-anim:hover {
+    transition: all 0.5s ease;
+    transform: translateY(-10px);
+}
+
+img.team-social-anim:not(:hover) {
+    transition: all 0.5s ease;
+}
+
+img.team-social-anim {
+  background-color: #8987DF;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}

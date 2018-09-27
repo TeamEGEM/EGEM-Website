@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#8987DF"/>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="EGEM Project" />
+    <meta name="keywords" content="EtherGem EGEM Ethereum Bitcoin Litecoin Dash Ripple Sapphire master quarry nodes cryptocurrency cryptocurrencies coin token blockchain" />
+    <meta name="description" content="EtherGem (EGEM) is a community-supported coin with no pre-mine. It is based off of Ethereum, but does not have many of the limitations
+        of Ethereum, such as limited transactional throughput. It also offers quarry nodes that pay dividends to node holders." />
+    <title>EtherGem (EGEM) - Home</title>
+    <link rel="stylesheet" type="text/css" href="css/links.css" />
+    <link rel="stylesheet" type="text/css" href="css/particles.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/roadmap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/team.css" />
+    <link rel="stylesheet" type="text/css" href="css/ticker.css" />
+    <link rel="stylesheet" href="./js/maps/jquery-jvectormap-2.0.3.css" media="all"/>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/particles.min.js"></script>
+    <script type="text/javascript" src="js/xhr.js"></script>
+    <script type="text/javascript" src="js/particles-config.js" defer="defer"></script>
+</head>
+<body>
+    <nav>
+        <!-- Navigation for Desktop View -->
+        <a href="index.html"><img src="images/small-egem-logo.png" style="position: absolute; top: 0px; left: 15px;" alt="EtherGem Home" /></a>
+        <a href="#about" class="nav">About</a>
+        <a href="#faq" target="_blank" class="nav">F.A.Q</a>
+        <a href="#team" class="nav">Team</a>
+        <a href="#roadmap" class="nav">Roadmap</a>
+        <a href="#nodes" class="nav">Quarry Nodes</a>
+        <a href="#exchanges" class="nav">Exchanges</a>
+        <!--<a href="#team" class="nav">Team</a>-->
+        <a href="http://forum.egem.io" target="_blank" class="nav">Forums</a>
+        <a href="#wallets" target="_blank" class="nav">Wallets</a>
+        <a href="http://triforce.egem.io/" target="_blank" class="nav">Triforce</a>
+        <a href="http://pool.egem.io" target="_blank" class="nav">Pool</a>
+        <a href="https://explorer.egem.io" target="_blank" class="nav">Block Explorer</a>
+        <a href="https://network.egem.io" target="_blank" class="nav">Network Stats</a>
+        <a href="http://api.egem.io" target="_blank" class="nav">API</a>
+        <!-- Navigation for Responsive Mobile View -->
+        <hamburger-menu style="position: absolute; right: 20px;">
+            <hamburger-line></hamburger-line>
+            <hamburger-line></hamburger-line>
+            <hamburger-line></hamburger-line>
+        </hamburger-menu>
+        <ul class="nav-menu">
+            <li class="menu-item"><a href="#about" class="mobile-nav">About</a></li>
+            <li class="menu-item"><a href="#faq" target="_blank" class="mobile-nav">F.A.Q</a></li>
+            <li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>
+            <li class="menu-item"><a href="#roadmap" class="mobile-nav">Roadmap</a></li>
+            <li class="menu-item"><a href="#nodes" class="mobile-nav">Quarry Nodes</a></li>
+            <li class="menu-item"><a href="#exchanges" class="mobile-nav">Exchanges</a></li>
+            <!--<li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>-->
+            <li class="menu-item"><a href="http://forum.egem.io" target="_blank" class="mobile-nav">Forums</a></li>
+            <li class="menu-item"><a href="#wallets" target="_blank" class="mobile-nav">Wallets</a></li>
+            <li class="menu-item"><a href="http://triforce.egem.io/" target="_blank" class="mobile-nav">Triforce</a></li>
+            <li class="menu-item"><a href="http://pool.egem.io" target="_blank" class="mobile-nav">Pool</a></li>
+            <li class="menu-item"><a href="http://explorer.egem.io" target="_blank" class="mobile-nav">Block Explorer</a></li>
+            <li class="menu-item"><a href="http://network.egem.io" target="_blank" class="mobile-nav">Network Stats</a></li>
+            <li class="menu-item"><a href="http://api.egem.io" target="_blank" class="mobile-nav">API</a></li>
+        </ul>
+    </nav>
+    <!-- Coin Stats Ticker -->
+    <script type="text/javascript">getCoinInfo();</script>
+    <ticker-wrapper>
+        <ticker>
+            <ticker-item>
+                <span class="stat-title">EtherGem </span> EGEM
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Current Era:</span>0
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Block Height:</span><span id="block-height"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Est. EGEM Supply:</span><span id="total-egem-supply"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Market Cap (USD):</span>$<span id="market-cap-usd"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Average Exchange Price (USD):</span>$<span id="average-usd"></span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Miner Reward: </span>8</span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Dev Reward: </span>1</span>
+            </ticker-item>
+            <ticker-item>
+                <span class="stat-title">Reduction at: </span>Block 2,500,001</span>
+            </ticker-item>
+        </ticker>
+    </ticker-wrapper>
+    <content>
+        <a name="#top"></a>
+        <intro>
+            <!-- Social Media Links -->
+            <social class="social-media">
+                <a href="http://discord.egem.io" alt="Discord" target="_blank"><img src="images/social-icons/discord-32.png" alt="Discord" class="social-anim" /></a>
+                <!--<img src="images/social-icons/facebook-32.png"  alt="Facebook" class="social-anim" />-->
+                <a href="https://t.me/EGEM_Team" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="social-anim" /></a>
+                <a href="https://twitter.com/EtherGemCoin" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="social-anim" /></a>
+                <a href="https://www.youtube.com/channel/UCH4uEyf5roU6ydButXYdiBg" alt="YouTube" target="_blank"><img src="images/social-icons/youtube-32.png" alt="YouTube" class="social-anim" /></a>
+                <a href="https://github.com/TeamEGEM" alt="Github" target="_blank"><img src="images/social-icons/github-32.png" alt="Github" class="social-anim" /></a>
+            </social>
+            <!-- Blockchain Animation - Disappears in Responsive Mobile View-->
+            <particles-wrapper>
+                <div id="particles-js"></div>
+            </particles-wrapper>
+            <img src="images/logo.png" style="display: none; margin-top: 20px;" class="egem-logo" alt="EtherGem Logo" />
+        </intro>
+        <!-- Main Section - Topics are Comprised of <section> and <section-content> Tags -->
+        <section>
+            <a class="section-anchor" name="about"></a>
+            About EtherGem (EGEM).
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content>
+            <p>
+                EGEM is the stable, pure, no pre-mine coin with applied technologies peernet and per block endowment.
+            </p>
+            <p>
+                What does that really mean, though?
+            </p>
+            <p>
+                EtherGem, "EGEM," is first and foremost, a pure community coin with no pre-mine. True to its roots as a cryptocurrency, the Proof of Work mining
+                community will always be a part of EGEM's future and is the foundation of the EGEM launch. There is no ICO on EGEM and EGEM is its own primary
+                blockchain, not just a token or concept on another chain. The EtherGem blockchain is an Ethereum network, meaning it starts with the tested and proven
+                Ethereum (as in ETH) core technologies and builds from there. Technically, EGEM is an Ethereum chain as described in the yellow paper, with EIP150,
+                EIP155, EIP158 applied from block 0. Block Rewards have 7 eras of reduction, including a dev reward enabled after block 5000. Developers and Community
+                Managers are bound by a continuity agreement to maintain the network, community, and coin. There is no cap to EGEM at the moment. A monetary cap will be
+                put in place when the community determines that the logical progression would be to cap the coin.
+            </p>
+            <p>
+                An "applied technologies peernet" is where the EtherGem blockchain grows on a mineable token sidechain. Dual mining ethergem and a token is something
+                new. The EGEM sidechain is designed to be very much an integral part of ongoing mainchain development, where peers can implement new technology
+                while continuing to rely on a solid foundation. The sidechain and token will be available shortly after the mainnet release.
+            </p>
+            <p>
+                View the EtherGem <a href="whitepaper.html" target="_blank">white paper</a>.
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="faq"></a>
+            Frequently Asked Questions.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content style="margin-bottom: 60px;">
+            <p>
+              Q: What is the max supply of EGEM?</br>
+              A: After the final era which is the 7th there will be roughly 45 million EGEM in circulation, and each year following will produce 350k new coins give or take.
+            </p>
+            <p>
+              Q: What makes you different than any other chain?</br>
+              A: We have implemented our own difficulty adjustment per block to keep the chain under a 13 second average, and we also use a custom block halving scheme to slowly reduce the amount of coins that get created over time.
+            </p>
+            <p>
+              Q: Why the Name?</br>
+              A: Ether - a medium that in the wave theory of light permeates all space and transmits transverse waves. Gem - something prized especially for great beauty or perfection.
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="roadmap"></a>
+            Project Roadmap.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content class="aligncenter">
+            <div class="timeline">
+                <div class="container left">
+                    <div class="card grey-complete">
+                        <h2>Genesis block</h2>
+                        <p>
+                            Stable EGEM blockchain under 13 second average block time, web wallets, and basic explorer (Initial Launch).
+                        </p>
+                        <h5>Released: March 3, 2018</h5>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card grey-complete">
+                        <h2>Desktop wallet Opal alpha release</h2>
+                        <p>
+                            A wallet we can grow with to add the upcoming integrated subchain and works on all platforms.
+                            <h5>Alpha <a href="https://github.com/TeamEGEM/Opal-Wallet" target="_blank">Preview</a></h5>
+                        </p>
+                        <h5>Released: July 1, 2018</h5>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="card grey-complete">
+                        <h2>Quarry (Master) Nodes</h2>
+                        <p>
+                            Quarry (Master) nodes implemented, community bots for node management (Discord), game bots (Discord), and automated payments for node holders.
+                            <h5>More <a href="https://docs.google.com/document/d/1pOtDnUyBWjekaLfa_2MhAZTNS24ds1ONHyVg2j7Zt84" target="_blank">Info</a></h5>
+                        </p>
+                        <h5>Released: Sept 1, 2018</h5>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card">
+                        <h2>Explorer and wallet enhancements</h2>
+                        <p>
+                            Upgraded explorer, mobile wallets and Opal wallet beta release.
+                            <h5>Beta <a href="http://beta-explorer.egem.io" target="_blank">Preview</a></h5>
+                        </p>
+                        <h5>Work is Ongoing!</h5>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="card">
+                        <h2>Sapphire</h2>
+                        <p>
+                            Sapphire is an integrated sub-chain that interweaves the mainchain on EGEM and includes a DEX. It is dual-mineable with EGEM and companies can
+                            ICO on the multicurrency wallet and DEX - paying in EGEM, with proceeds enhancing the quarry node payments.
+                        </p>
+                        <h5>Work is Ongoing!</h5>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="card">
+                        <h2>Product integration and growth</h2>
+                        <p>
+                            Fiat to crypto conversion capabilities, ATM development and implementation, integration of both with DEX.
+                        </p>
+                        <h5>Coming/Starting Soon!</h5>
+                    </div>
+                </div>
+            </div>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="nodes"></a>
+            Quarry (Master) Nodes.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content>
+            <p>
+                Interested in earning a return on your EGEM holdings? EGEM quarry nodes (a form of master node) allow node operators to receive EtherGem in exchange for
+                running a node. There are currently two tiers of nodes:
+                <ul>
+                    <li />Tier 1 - 10000 EGEM Collateral
+                    <li />Tier 2 - Tier 1 Node &amp; 30000 EGEM Collateral
+                </ul>
+                As the EtherGem network grows, there are plans to add additional node tiers with increasing returns. This gives node investors the ability to exponentially grow
+                their holdings as they acquire more EGEM. Click <a href="https://github.com/TeamEGEM/EGEM-node-install" alt="Node Setup Instructions">here</a> to access the
+                GitHub code for setting up a node.
+            </p>
+            <p>
+                EtherGem has a full-service Discord bot that allows you to manage your node(s). You can perform such actions as: registering a node, changing the IP address
+                of a node, turning automatic payments on/off, checking your wallet balance.</br></br>
+            </p>
+            <div class="aligncenter">
+                Node locations around the world.
+                <div id="world-map-markers" style=""></div>
+            </div>
+            <p>
+                Additional Features List:
+                <ul>
+                  <li>Blockchain Interactions</li>
+                  <li>Account Management</li>
+                  <li>Entertainment & Games</li>
+                  <li>Node Janitorial Functions</li>
+                  <li>Exchange EGEM with others.</li>
+                </ul>
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="wallets"></a>
+            Wallets.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content style="margin-bottom: 60px;">
+            <p>
+                You can store EGEM on the following wallets.
+            </p>
+            <div class="aligncenter">
+                <a href="https://www.ledger.com/" target="_blank" alt="Ledger"><img src="images/wallets/ledger-nano.png" style="vertical-align: top; margin: 20px 10px 0px 10px;" alt="Ledger" /></a>
+                <a href="https://trezor.io/" target="_blank" alt="Trezor"><img src="images/wallets/trezor-wallet-app.png" style="vertical-align: top; margin: 20px 10px 30px 10px;" alt="Trezor" /></a></br>
+                <a href="https://www.myetherwallet.com/" target="_blank" alt="myetherwallet.com"><img src="images/wallets/mew.png" style="vertical-align: top; margin: 20px 10px 30px 10px;" alt="myetherwallet.com" /></a>
+                <a href="https://www.mycrypto.com/" target="_blank" alt="mycrypto.com"><img src="images/wallets/mycrypto.png" style="vertical-align: top; margin: 20px 10px 30px 10px;" alt="mycrypto.com" /></a>
+            </div>
+            <p>
+                We also have our own branded MEW located at <a href="https://myegemwallet.com/" target="_blank" alt="myegemwallet.com">myegemwallet.com</a>.
+            </p>
+            <p>
+                There will be more wallets and places to store EGEM as the project/platform evolves, We would also like to mention that it is never a good idea to store and/or mine to an exchange wallet, as things can and have happened in the past to other coins.
+            </p>
+        </section-content>
+        <section>
+            <a class="section-anchor" name="exchanges"></a>
+            Exchanges.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content style="margin-bottom: 60px;">
+            <p>
+                We are proudly listed on the following exchanges. The EtherGem team is actively engaged in talks with additional exchanges, and they will be listed here as they
+                become available for trading.
+            </p>
+            <div class="aligncenter">
+                <a href="https://www.graviex.net/" target="_blank" alt="Graviex"><img src="images/exchanges/graviex.png" style="vertical-align: top; margin: 20px 10px 0px 10px;" alt="Graviex" /></a>
+                <a href="https://www.maplechange.com/" target="_blank" alt="Graviex"><img src="images/exchanges/maplechange.png" style="vertical-align: top; margin: 20px 10px 70px 10px;" alt="MapleChange" /></a>
+            </div>
+        </section-content>
+        <!-- <section>
+            <a class="section-anchor" name="team"></a>
+            Team (Core) Members.
+            <arrow class="scrollTop">
+                &#9650;
+            </arrow>
+        </section>
+        <section-content style="margin-bottom: 60px;">
+          <div class="row">
+            <div class="column">
+              <div class="card-team">
+                <img src="images/team-members/team1.png" alt="Derek" style="width:100%">
+                <div class="container-team">
+                  <h2>Derek ( Riddlez ) M</h2>
+                  <a href="#" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="team-social-anim" /></a>
+                  <a href="#" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="team-social-anim" /></a>
+                  <a href="#" alt="Github" target="_blank"><img src="images/social-icons/github-32.png" alt="Github" class="team-social-anim" /></a>
+                  <p class="title">Founder / JS Developer</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>ridz@egem.io</p>
+                  <p><a class="button" href="mailto:ridz@egem.io">Contact</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card-team">
+                <img src="images/team-members/team1.png" alt="Frank" style="width:100%">
+                <div class="container-team">
+                  <h2>Frank ( Osoese ) T</h2>
+                  <a href="#" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="team-social-anim" /></a>
+                  <a href="#" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="team-social-anim" /></a>
+                  <a href="#" alt="Github" target="_blank"><img src="images/social-icons/github-32.png" alt="Github" class="team-social-anim" /></a>
+                  <p class="title">Coder / Sidechain Developer</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>osoese@egem.io</p>
+                  <p><a class="button" href="mailto:osoese@egem.io">Contact</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card-team">
+                <img src="images/team-members/team1.png" alt="Jose" style="width:100%">
+                <div class="container-team">
+                  <h2>Jose (jal3inc) L</h2>
+                  <a href="#" alt="Telegram" target="_blank"><img src="images/social-icons/telegram-32.png" alt="Telegram" class="team-social-anim" /></a>
+                  <a href="#" alt="Twitter" target="_blank"><img src="images/social-icons/twitter-32.png" alt="Twitter" class="team-social-anim" /></a>
+                  <a href="#" alt="Github" target="_blank"><img src="images/social-icons/github-32.png" alt="Github" class="team-social-anim" /></a>
+                  <p class="title">Ruby / Rails Developer</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p>jal3inc@egem.io</p>
+                  <p><a class="button" href="mailto:jal3inc@egem.io">Contact</a></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section-content> -->
+    </content>
+    <footer>
+        &copy;2018 EtherGem, All Rights Reserved.
+        <br/>Contact Us @ <a href="mailto:info@egem.io" target="_blank">info@egem.io</a>
+    </footer>
+    <script src="./js/maps/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="./js/maps/jquery-jvectormap-world-mill.js"></script>
+
+  <script>
+  $(function(){
+$('#world-map-markers').vectorMap({
+  map: 'world_mill',
+  scaleColors: ['#C8EEFF', '#0071A4'],
+  normalizeFunction: 'polynomial',
+  zoomOnScroll: true,
+  zoomButtons : true,
+  enableZoom: true,
+  hoverOpacity: null,
+  selectedColor: '#c9dfaf',
+  selectedRegions: [],
+  showTooltip: false,
+  regionStyle: {
+    initial: {
+      fill: '#ffffff'
+    },
+    selected: {
+      fill: '#8269D8'
+    }
+  },
+  borderColor: '#D0F7FF',
+  borderOpacity: 0.25,
+  borderWidth: 2,
+  markerStyle: {
+    initial: {
+      stroke: 'white'
+    }
+  },
+
+  backgroundColor: '',
+  markers: [
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [40.7357, -74.1724], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [-36.8667, 174.7667], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.5833, -2.1333], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [40.7357, -74.1724], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [56, 24], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [50.0979, 8.5999], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [50.1167, 8.6833], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [40.7904, -74.0246], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [50.0979, 8.5999], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.2394, 21.0362], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [45.504, -73.5747], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [56, 24], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [48.8628, 2.3292], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [52.2394, 21.0362], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [39.9537, -82.9317], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [25.8124, -80.2401], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [32.7787, -96.8217], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [39.0152, -119.7506], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
+    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.567, -121.9829], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5449, -75.4026], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [1.3667, 103.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.0584, -118.278], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.5833, -2.1333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.7357, -74.1724], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [56, 24], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [12.9833, 77.5833], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7825, -96.8207], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [33.749, -84.388], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [41.408, -8.5198], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.8314, -72.9758], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3388, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [45.504, -73.5747], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [41.1034, -104.9059], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [48.8628, 2.3292], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [48.8628, 2.3292], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [45.3168, -73.8659], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.8864, -78.8781], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [12.9833, 77.5833], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [39.9738, -86.1765], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [60.3911, 5.3247], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.8326, -74.1307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [45.3168, -73.8659], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [55.7386, 37.6068], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7825, -96.8207], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [33.793, -84.4432], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [33.793, -84.4432], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [50.0979, 8.5999], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.7749, -122.4194], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
+  ],
+});
+});
+$('#world-map-markers').vectorMap.fadeIn().resize();
+
+  </script>
+</body>
+</html>
+
+
+        <!-- <h2 id="team">
+            Team
+        </h2>
+        <arrow class="scrollTop">&#9650;</arrow>
+        <div style="width: 80%; position: relative; left: 10%; text-align: center;">
+            <team-member>
+                Team Member 1
+            </team-member>
+            <team-member>
+                Team Member 2
+            </team-member>
+            <team-member>
+                <img src="images/team-members/eric_martin.jpg" class="team-member-image" />
+                <div class="team-member-name">
+                    Eric Martin
+                </div>
+                <div class="team-member-content">
+                    Mr. Martin holds a B.S. in Information Systems from Drexel University and has over 20 years of experience in all aspects of information technology;
+                    infrastructure, architecture, development, and testing.  His primary interest is applying software quality assurance principles to blockchain
+                    technology and development.
+                </div>
+            </team-member>
+        </div> -->

@@ -1,0 +1,16 @@
+{
+  "name": "EGEMSITE",
+  "subdomain": "EGEMSITE",
+  "author": "TeamEGEM <info@egem.io>",
+  "scripts": {
+    "start": "server.js"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "socket.io": "^2.1.1"
+  }
+}
