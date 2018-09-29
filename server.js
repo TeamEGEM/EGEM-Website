@@ -2,7 +2,7 @@ var http = require('http');
 var Static = require('node-static');
 var app = http.createServer(handler);
 var io = require('socket.io').listen(app);
-var port = 80;
+var port = 8080;
 
 var files = new Static.Server('./public');
 
@@ -13,7 +13,7 @@ function handler (request, response) {
 }
 
 // delete to see more logs from sockets
-io.set('log level', 1);
+// io.set('log level', 1);
 
 io.sockets.on('connection', function (socket) {
 
