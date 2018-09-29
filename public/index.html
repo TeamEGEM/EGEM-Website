@@ -4,7 +4,7 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <meta name="theme-color" content="#8987DF"/>
+    <meta name="theme-color" content="#4286f4"/>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="EGEM Project" />
     <meta name="keywords" content="EtherGem EGEM Ethereum Bitcoin Litecoin Dash Ripple Sapphire master quarry nodes cryptocurrency cryptocurrencies coin token blockchain" />
@@ -24,20 +24,21 @@
     <script type="text/javascript" src="js/particles.min.js"></script>
     <script type="text/javascript" src="js/xhr.js"></script>
     <script type="text/javascript" src="js/particles-config.js" defer="defer"></script>
+    <script type="text/javascript" src="js/egemnode.js"></script>
 </head>
 <body>
     <nav>
         <!-- Navigation for Desktop View -->
         <a href="index.html"><img src="images/small-egem-logo.png" style="position: absolute; top: 0px; left: 15px;" alt="EtherGem Home" /></a>
         <a href="#about" class="nav">About</a>
-        <a href="#faq" target="_blank" class="nav">F.A.Q</a>
+        <a href="#faq" class="nav">F.A.Q</a>
         <a href="#team" class="nav">Team</a>
         <a href="#roadmap" class="nav">Roadmap</a>
-        <a href="#nodes" class="nav">Quarry Nodes</a>
+        <a href="#nodes" class="nav">Quarrynodes</a>
         <a href="#exchanges" class="nav">Exchanges</a>
         <!--<a href="#team" class="nav">Team</a>-->
         <a href="http://forum.egem.io" target="_blank" class="nav">Forums</a>
-        <a href="#wallets" target="_blank" class="nav">Wallets</a>
+        <a href="#wallets" class="nav">Wallets</a>
         <a href="http://triforce.egem.io/" target="_blank" class="nav">Triforce</a>
         <a href="http://pool.egem.io" target="_blank" class="nav">Pool</a>
         <a href="https://explorer.egem.io" target="_blank" class="nav">Block Explorer</a>
@@ -54,7 +55,7 @@
             <li class="menu-item"><a href="#faq" target="_blank" class="mobile-nav">F.A.Q</a></li>
             <li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>
             <li class="menu-item"><a href="#roadmap" class="mobile-nav">Roadmap</a></li>
-            <li class="menu-item"><a href="#nodes" class="mobile-nav">Quarry Nodes</a></li>
+            <li class="menu-item"><a href="#nodes" class="mobile-nav">Quarrynodes</a></li>
             <li class="menu-item"><a href="#exchanges" class="mobile-nav">Exchanges</a></li>
             <!--<li class="menu-item"><a href="#team" class="mobile-nav">Team</a></li>-->
             <li class="menu-item"><a href="http://forum.egem.io" target="_blank" class="mobile-nav">Forums</a></li>
@@ -68,6 +69,7 @@
     </nav>
     <!-- Coin Stats Ticker -->
     <script type="text/javascript">getCoinInfo();</script>
+    <script type="text/javascript">getNodeInfo();</script>
     <ticker-wrapper>
         <ticker>
             <ticker-item>
@@ -83,10 +85,10 @@
                 <span class="stat-title">Est. EGEM Supply:</span><span id="total-egem-supply"></span>
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Market Cap (USD):</span>$<span id="market-cap-usd"></span>
+                <span class="stat-title">Market Cap (USD):</span><span id="market-cap-usd"></span>
             </ticker-item>
             <ticker-item>
-                <span class="stat-title">Average Exchange Price (USD):</span>$<span id="average-usd"></span>
+                <span class="stat-title">Average Exchange Price (USD):</span><span id="average-usd"></span>
             </ticker-item>
             <ticker-item>
                 <span class="stat-title">Miner Reward: </span>8</span>
@@ -120,7 +122,7 @@
         <!-- Main Section - Topics are Comprised of <section> and <section-content> Tags -->
         <section>
             <a class="section-anchor" name="about"></a>
-            About EtherGem (EGEM).
+            About EtherGem (EGEM)
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
@@ -152,7 +154,7 @@
         </section-content>
         <section>
             <a class="section-anchor" name="faq"></a>
-            Frequently Asked Questions.
+            Frequently Asked Questions
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
@@ -173,13 +175,14 @@
         </section-content>
         <section>
             <a class="section-anchor" name="roadmap"></a>
-            Project Roadmap.
+            Project Roadmap
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
         </section>
         <section-content class="aligncenter">
-            <div class="timeline">
+          <span id="prmap"><small><img src="images/small-egem-logo.png" id="prmapimg" alt="EtherGem Home" title="Click me to explorer the roadmap."/></br><span id="prome">Open</span><span id="prcme">Close</span></small></span>
+            <div id="rmapdiv" class="timeline">
                 <div class="container left">
                     <div class="card grey-complete">
                         <h2>Genesis block</h2>
@@ -242,7 +245,7 @@
         </section-content>
         <section>
             <a class="section-anchor" name="nodes"></a>
-            Quarry (Master) Nodes.
+            Quarry (Master) Nodes
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
@@ -261,11 +264,22 @@
             </p>
             <p>
                 EtherGem has a full-service Discord bot that allows you to manage your node(s). You can perform such actions as: registering a node, changing the IP address
-                of a node, turning automatic payments on/off, checking your wallet balance.</br></br>
+                of a node, turning automatic payments on/off, checking your wallet balance. And also being able to set when you would like to have the system send node rewards.
+            </p>
+            <p>
+                Node Stats:
+                <ul>
+                  <li>Total Nodes: <span class="node-stats" id="nodes-online-total"></span></li>
+                  <li>Tier #1: <span class="node-stats" id="nodes-online1"></span></li>
+                  <li>Tier #2 <span class="node-stats" id="nodes-online2"></span></li>
+                  <li>Est. Locked: <span class="node-stats" id="nodes-egem-locked"></span> EGEM</li>
+                  <li>Est. Value: <span class="node-stats" id="nodes-egem-value">Locked x Value</span></li>
+                </ul>
             </p>
             <div class="aligncenter">
-                Node locations around the world.
+                Nodes map updates every 24h.
                 <div id="world-map-markers" style=""></div>
+                <div id="the-nodes" style=""></div>
             </div>
             <p>
                 Additional Features List:
@@ -276,11 +290,12 @@
                   <li>Node Janitorial Functions</li>
                   <li>Exchange EGEM with others.</li>
                 </ul>
+                Indepth stats can be found <a href="https://dnregemx.sh/egem/" target="_blank" alt="dnregemx.sh">here.</a>
             </p>
         </section-content>
         <section>
             <a class="section-anchor" name="wallets"></a>
-            Wallets.
+            Wallets
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
@@ -288,6 +303,9 @@
         <section-content style="margin-bottom: 60px;">
             <p>
                 You can store EGEM on the following wallets.
+            </p>
+            <p>
+                Give the OPAL desktop wallet a try <a href="https://github.com/TeamEGEM/Opal-Wallet" target="_blank" alt="opalwallet">here.</a> (WINDOW/LINUX) mac coming soon.
             </p>
             <div class="aligncenter">
                 <a href="https://www.ledger.com/" target="_blank" alt="Ledger"><img src="images/wallets/ledger-nano.png" style="vertical-align: top; margin: 20px 10px 0px 10px;" alt="Ledger" /></a>
@@ -304,7 +322,7 @@
         </section-content>
         <section>
             <a class="section-anchor" name="exchanges"></a>
-            Exchanges.
+            Exchanges
             <arrow class="scrollTop">
                 &#9650;
             </arrow>
@@ -388,222 +406,45 @@
     <script src="./js/maps/jquery-jvectormap-world-mill.js"></script>
 
   <script>
-  $(function(){
-$('#world-map-markers').vectorMap({
-  map: 'world_mill',
-  scaleColors: ['#C8EEFF', '#0071A4'],
-  normalizeFunction: 'polynomial',
-  zoomOnScroll: true,
-  zoomButtons : true,
-  enableZoom: true,
-  hoverOpacity: null,
-  selectedColor: '#c9dfaf',
-  selectedRegions: [],
-  showTooltip: false,
-  regionStyle: {
-    initial: {
-      fill: '#ffffff'
-    },
-    selected: {
-      fill: '#8269D8'
-    }
-  },
-  borderColor: '#D0F7FF',
-  borderOpacity: 0.25,
-  borderWidth: 2,
-  markerStyle: {
-    initial: {
-      stroke: 'white'
-    }
-  },
 
-  backgroundColor: '',
-  markers: [
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [40.7357, -74.1724], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [-36.8667, 174.7667], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.5833, -2.1333], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [40.7357, -74.1724], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [56, 24], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [50.0979, 8.5999], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [50.1167, 8.6833], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [40.7904, -74.0246], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [50.0979, 8.5999], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.2394, 21.0362], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [45.504, -73.5747], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [56, 24], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [48.8628, 2.3292], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [52.2394, 21.0362], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [39.9537, -82.9317], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [25.8124, -80.2401], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [32.7787, -96.8217], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [39.0152, -119.7506], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 6, fill: '#8987DF'}},
-    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.567, -121.9829], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5449, -75.4026], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [1.3667, 103.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.0584, -118.278], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.5833, -2.1333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.7357, -74.1724], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [56, 24], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [12.9833, 77.5833], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7825, -96.8207], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [33.749, -84.388], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [41.408, -8.5198], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.8314, -72.9758], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3388, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [45.504, -73.5747], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [41.1034, -104.9059], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [48.8628, 2.3292], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [48.8628, 2.3292], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [45.3168, -73.8659], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.8864, -78.8781], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [12.9833, 77.5833], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1153, 8.6823], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [39.9738, -86.1765], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [60.3911, 5.3247], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.8326, -74.1307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [45.3168, -73.8659], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [55.7386, 37.6068], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7825, -96.8207], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [40.4652, -74.2307], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [33.793, -84.4432], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [33.793, -84.4432], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [50.0979, 8.5999], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.7749, -122.4194], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-    {latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 6, fill: '#8269D8'}},
-  ],
-});
-});
-$('#world-map-markers').vectorMap.fadeIn().resize();
+  $(function(){
+    $('#world-map-markers').vectorMap({
+              map: 'world_mill',
+              scaleColors: ['#C8EEFF', '#0071A4'],
+              normalizeFunction: 'polynomial',
+              zoomOnScroll: true,
+              zoomButtons : true,
+              enableZoom: true,
+              hoverOpacity: null,
+              selectedColor: '#c9dfaf',
+              selectedRegions: [],
+              showTooltip: false,
+              regionStyle: {
+                initial: {
+                  fill: '#ffffff'
+                },
+                selected: {
+                  fill: '#8269D8'
+                }
+              },
+              borderColor: '#D0F7FF',
+              borderOpacity: 0.25,
+              borderWidth: 2,
+              markerStyle: {
+                initial: {
+                  stroke: 'white'
+                }
+              },
+              backgroundColor: '',
+              markers: [
+
+                {latLng: [40.4652, -74.2307], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.567, -121.9829], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5449, -75.4026], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [1.3667, 103.8], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.0584, -118.278], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.5833, -2.1333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.7357, -74.1724], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [56, 24], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [12.9833, 77.5833], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7825, -96.8207], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.0729, -118.2606], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [33.749, -84.388], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [41.408, -8.5198], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.8314, -72.9758], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3388, -121.8914], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1153, 8.6823], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3387, -121.8914], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [45.504, -73.5747], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [41.1034, -104.9059], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [1.2931, 103.8558], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [48.8628, 2.3292], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [48.8628, 2.3292], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [45.3168, -73.8659], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.8864, -78.8781], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1153, 8.6823], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.7904, -74.0246], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [12.9833, 77.5833], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [1.2931, 103.8558], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1153, 8.6823], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [39.9738, -86.1765], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [60.3911, 5.3247], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.4652, -74.2307], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.8326, -74.1307], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [45.3168, -73.8659], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [55.7386, 37.6068], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [1.2931, 103.8558], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7825, -96.8207], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [40.4652, -74.2307], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.8612, 151.1982], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [33.793, -84.4432], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [33.793, -84.4432], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [50.0979, 8.5999], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.7749, -122.4194], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},{latLng: [32.7877, -96.8], name: 'Quarrynode #1', style: {r: 8, fill: '#4286f4'}},
+
+                {latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7357, -74.1724], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-36.8667, 174.7667], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.5833, -2.1333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7357, -74.1724], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [56, 24], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [50.0979, 8.5999], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [50.1167, 8.6833], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [32.7877, -96.8], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [50.0979, 8.5999], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.2394, 21.0362], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [45.504, -73.5747], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [34.0729, -118.2606], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3387, -121.8914], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-33.8612, 151.1982], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [56, 24], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3824, 4.8995], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [48.8628, 2.3292], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [42.0152, -87.9901], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [43.4628, 11.880700000000001], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.2394, 21.0362], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [50.1137, 8.7119], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [39.9537, -82.9317], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [25.8124, -80.2401], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [32.7787, -96.8217], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [39.0152, -119.7506], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [12.9833, 77.5833], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [34.4065, -118.4015], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [33.748, -84.3858], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-32.0167, 115.8333], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.7904, -74.0246], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.2993, 9.491], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [51.5142, -0.0931], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [1.2931, 103.8558], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [40.5516, -74.4637], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [52.3904, 4.6563], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null, null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [35.5826, 139.7459], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [47.6145, -122.348], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.751, -97.822], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [-33.9032, 150.9677], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [null], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [37.3501, -121.9854], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},{latLng: [32.7825, -96.8207], name: 'Quarrynode #2', style: {r: 4, fill: '#8269D8'}},
+              ],
+        });
+    });
+    $('#world-map-markers').vectorMap.fadeIn().resize();
 
   </script>
 </body>
