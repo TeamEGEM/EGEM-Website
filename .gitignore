@@ -1,6 +1,9 @@
-﻿################################################################################
+node_modules
+*.log﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
 /.vs/config/applicationhost.config
 /.vs
+node_modules
+*.log

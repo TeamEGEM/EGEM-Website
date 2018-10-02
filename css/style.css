@@ -78,6 +78,23 @@ content {
     text-align: left;
 }
 
+#world-map-markers {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  height:400px;
+  background-color:#D0F7FF;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.node-stats {
+  color: #8269D8;
+}
+
+#prxme {
+  color: #8269D8;
+}
+
 footer {
     height: 45px;
     width: 100%;
@@ -149,18 +166,19 @@ section {
     position: relative;
     margin: 20px 20px 0px 20px;
     padding: 5px 0px;
-    border-top: 10px solid #8987DF;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
+    border-top: 5px solid #606c88;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
-    -webkit-box-shadow: 3px 2px 19px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 2px 19px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 2px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.46);
+    box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.46);
+    background: #FBFCFC;
 }
 
     section:first-of-type {

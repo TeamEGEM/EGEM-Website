@@ -12,6 +12,14 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.egem-logo').delay(500).fadeIn(1000);
     $('.social-media').delay(750).fadeIn(1000);
+    $('#prmapimg').delay(1750).fadeIn(1000).fadeOut(500).fadeIn(1000).fadeOut(500).fadeIn(1000);
+    $("#rmapdiv").hide();
+    $("#prcme").hide();
+    $("#prmap").click(function(){
+        $("#prcme").slideToggle('fast');
+        $("#prome").slideToggle('fast');
+        $("#rmapdiv").slideToggle(3000);
+    });
 });
 
 // Show mobile nav when clicking on hamburger and hide when a link is selected
@@ -51,7 +59,7 @@ function popup(url) {
 //{
 //    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 //    {
-//        // Some code... 
+//        // Some code...
 //    }
 //}
 
@@ -101,7 +109,7 @@ function inputTypeText(fieldId) {
     document.getElementById(fieldId).type = "text";
 }
 
-// Submit form if 'Enter' key is pressed 
+// Submit form if 'Enter' key is pressed
 function submitOnEnter(formId) {
     if (event.keyCode == 13) {
         document.getElementById(formId).submit();
