@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: egem.io
+Token: 286b95ce80efed0b38ebbaa767e1ebe61e8ef8d1e362572fdf60c49032d3c1ca
